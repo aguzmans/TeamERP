@@ -1,0 +1,29 @@
+team_erp_sales:
+    resource: "@TeamERPSalesBundle/Resources/config/routing.yml"
+    prefix:   /sales
+
+team_erp_customer:
+    resource: "@TeamERPCustomerBundle/Resources/config/routing.yml"
+    prefix:   /customer
+
+team_erp_stores:
+    resource: "@TeamERPStoresBundle/Resources/config/routing.yml"
+    prefix:   /stores
+
+team_erp_base:
+    resource: "@TeamERPBaseBundle/Resources/config/routing.yml"
+    prefix:   /
+    
+team_erp_user:
+    resource: "@TeamERPUserBundle/Resources/config/routing.yml"
+    prefix:   /
+
+team_erp_transport:
+    resource: "@TeamERPTransportBundle/Resources/config/routing.yml"
+    prefix:   /transport
+
+fos_js_routing:
+    resource: "@FOSJsRoutingBundle/Resources/config/routing/routing.xml"
+
+#shtumi_useful:
+#    resource: '@ShtumiUsefulBundle/Resources/config/routing.xml'

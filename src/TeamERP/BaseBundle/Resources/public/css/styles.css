@@ -1,0 +1,24 @@
+/* 
+    Created on : 06/28/2014, 05:40:06 AM
+    Author     : Abel Guzman
+*/
+/*@font-face {
+font-family: 'YOUR FONT';
+src: url('/bundles/meltawesome/font/YOURFONT.eot');
+src: local('YOUR FONT'),
+url('/bundles/meltawesome/font/YOURFONT.ttf') format('truetype'),
+url('/bundles/meltawesome/font/YOURFONT.svg#font') format('image/svg+xml');
+}*/
+#header, #right-sidebar {
+    margin-top: 1em; 
+}
+.panel-body {
+    padding: 0px;
+}
+.badge {
+    background: #ffffff;
+}
+/*.ui-corner-all {
+    color: red;
+    background: #31b0d5;
+}   */

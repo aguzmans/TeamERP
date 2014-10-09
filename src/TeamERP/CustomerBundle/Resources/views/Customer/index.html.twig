@@ -1,0 +1,63 @@
+{% extends "TeamERPCustomerBundle::layout.html.twig" %}
+{% block contentTitle %}
+<div><h3>Search customers</h3></div>
+{% endblock %}
+{% block content %}    
+{{ form_start(form, {'attr': {'class': 'form-horizontal'}}) }}
+{{ form_errors(form) }} 
+<div class="form-inline">
+    <div class="col-sm-10">
+            {{ form_widget(form.customer_info, 
+                {'attr': {'class': 'form-control',
+                     'placeholder' : 'Customer data', 'value': searchTerm}}) }}
+            {{ form_widget(form.search, {'attr': {'class': 'fa fa-search btn btn-primary'}}) }}
+    </div>
+</div>      
+{{ form_end(form) }}
+{% if result[0].customername is defined %}
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Action</th>
+            <th>Company</th>
+            <th>Name</th>
+            <th class="hidden-md hidden-sm hidden-xs">Physical Address</th>
+            <th class="hidden-md hidden-sm hidden-xs">Postal Address</th>
+            <th class="hidden-xs">City, town or village</th>
+            <th class="hidden-xs">E-mail</th>
+            <th class="hidden-xs">Phones</th>
+            <th class="hidden-xs">Fax</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for key,customer in pfresult %}
+        <tr>
+            <td><a class="warning" href="{{path('team_erp_customer_edit'
+, {'id' : customer.id })}}">
+                    <i class="fa fa-pencil-square-o"></i></a> | 
+                <a class="danger" href="{{path('team_erp_customer_delete'
+, {'id' : customer.id })}}">
+                    <i class="fa fa-trash-o"></i> </a></td>
+            <td>{{customer.company.companyname}}</td>
+            <td>{{customer.customername}}</td>
+            <td class="hidden-md hidden-sm hidden-xs">{{customer.address}}</td>
+            <td class="hidden-md hidden-sm hidden-xs">{{customer.postaladdress}}</td>
+            <td class="hidden-xs">{{customer.citytownvillage}}</td>
+            <td class="hidden-xs">{{customer.email}}</td>
+            <td class="hidden-xs">{{customer.landline}}
+                    {% if customer.cellphone != "" %} 
+                <span class="hidden-md">,{{customer.cellphone}}</span> 
+                    {% endif %}
+            </td>
+            <td class="hidden-xs">{{customer.fax}}</td>                                
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+<span>{{ pagerfanta(pfresult, 'default', {'proximity': 2}) }}</span>
+{% endif %}
+{% endblock %}
+{% block javascripts %}
+{{ parent()}}
+<script src="{{ asset('bundles/teamerpcustomer/js/index.js') }}"></script>
+{% endblock %}

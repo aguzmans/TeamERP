@@ -1,0 +1,17 @@
+{% extends "::base.html.twig"%}
+{% block header %}
+    {% include 'TeamERPBaseBundle:General:header.html.twig' %}
+{% endblock %}
+{% block leftBar %}   
+{% endblock %}
+{% block contentTitle %}
+{% endblock %}
+{% block content %}
+    <div class="bar-status">
+        {% block status %}          
+        {% endblock %}
+    </div> 
+{% endblock %}
+{% block  RigthSideBar %}
+        {% include 'TeamERPBaseBundle:General:rigth_side_bar.html.twig' %}  
+{% endblock %}            

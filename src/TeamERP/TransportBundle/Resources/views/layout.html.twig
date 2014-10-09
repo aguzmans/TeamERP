@@ -1,0 +1,10 @@
+{% extends "TeamERPBaseBundle:General:general.html.twig"%}
+{% block leftBar %} 
+    <div class="bar-left">                
+        <a href="{{path('team_erp_transport_homepage')}}">Job overview search</a> |<br> 
+        <a href="{{path('team_erp_transport_register_job')}}">New job</a> |<br>
+        <a href="{{path('team_erp_transport_search_fuel')}}">Refuel overview Search</a> |<br>
+        <a href="{{path('team_erp_transport_register_fuel')}}">New Refueling</a> |<br>
+        <a href="{{path('team_erp_transport_render_report')}}">Reports</a> | 
+    </div>
+{% endblock %}    

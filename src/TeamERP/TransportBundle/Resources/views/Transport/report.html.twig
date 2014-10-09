@@ -1,0 +1,44 @@
+{% extends "TeamERPTransportBundle::layout.html.twig" %}
+
+{% block content %}
+<fieldset><legend>Select your report period</legend>
+{{ form(form) }}
+</fieldset>
+<fieldset><legend>Vehicle Activity Report</legend>
+    <div class="vehicle-report"><table>
+        <tr>
+            <th>Vehicle</th>
+            <th>Total Ditance</th>
+            <th>Total Fuel</th>
+            <th>Fuel cost</th>
+            <th>Km/L</th>
+            <th>Total Jobs</th>
+        </tr>
+    {% for key,value in vehicles %}                   
+        <tr>
+            <td>{% if value.plateNumber is defined %}{{value.plateNumber}}{% endif %}</td>
+            <td>{% if value.totalDistance is defined %}{{value.totalDistance}}{% endif %}</td>
+            <td>{% if value.totalFuel is defined %}{{value.totalFuel}}{% endif %}</td>
+            <td>{% if value.totalFuelCost is defined %}{{value.totalFuelCost}}{% endif %}</td>
+            <td>{% if value.totalFuel is defined and value.totalDistance is defined %}
+                    {% if value.totalFuel >0 %}
+                        {{value.totalDistance/value.totalFuel}}
+                    {% endif %}
+                {% endif %}
+            </td>
+            <td>{% if value.countJob is defined %}{{value.countJob}}{% endif %}</td>
+        </tr>
+     {% endfor %}           
+        <tr class="table-totals">
+        <td>Total</td>
+        <td>{{total.totalDistance}}</td>
+        <td>{{total.totalFuel}}</td>
+        <td>{{total.totalFuelCost}}</td>
+        <td></td>
+        <td>{{total.countJob}}</td>
+        </tr>
+    </table>
+    </div>
+    <div class="vehicle-graphic">{{render.Render('LineGraph')}}</div>
+</fieldset>
+{% endblock %}

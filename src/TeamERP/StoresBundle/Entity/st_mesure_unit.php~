@@ -1,0 +1,36 @@
+<?php
+namespace TeamERP\StoresBundle\Entity;
+use Doctrine\ORM\Mapping AS ORM;
+
+/**
+ * @ORM\Entity
+ */
+class st_mesure_unit
+{
+    /**
+     * @ORM\Id
+     * @ORM\Column(type="integer")
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    private $id;
+
+    /**
+     * @ORM\Column(type="string", length=100, nullable=true)
+     */
+    private $name;
+
+    /**
+     * @ORM\Column(type="string", length=10, nullable=true)
+     */
+    private $abreviation;
+
+    /**
+     * @ORM\OneToMany(targetEntity="st_product_activity", mappedBy="mesureUnit")
+     */
+    private $pproductActivity;
+
+    /**
+     * @ORM\ManyToMany(targetEntity="st_product", mappedBy="mesureUnit")
+     */
+    private $product;
+}
