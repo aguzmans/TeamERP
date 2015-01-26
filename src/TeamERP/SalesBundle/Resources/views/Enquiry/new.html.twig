@@ -1,0 +1,129 @@
+{% extends "TeamERPSalesBundle::layout.html.twig"%}
+
+{% block content %}
+<h1>Seps test</h1>
+<a href="{{ path('sylius_flow_display', {'scenarioAlias': 'sylius_flow_enquiry', 'stepName': 'first'})}}">First</a>
+<a href="{{ path('sylius_flow_forward', {'scenarioAlias': 'sylius_flow_enquiry', 'stepName': 'second'})}}">Second</a>
+<!--
+<div class="form-group">
+    <label for="EnquiryNumber" class="col-sm-2 control-label">Enquiry Number</label>
+    <div class="col-sm-10">
+          <input type="text" class="form-control" id="EnquiryNumber" placeholder="Enquiry Number"> 
+    </div>
+  </div>
+   <div class="form-group">
+      <label for="Customerinformation" class="col-sm-2 control-label">Customer</label>
+        <div class="col-sm-10">
+            {% if customer is defined %}
+            {% else %}
+                <a><i class="fa fa-plus"></i> Add Customer</a>
+            {% endif %}
+        </div>
+  </div>    
+  <div class="form-group">
+      <label for="datetime" class="col-sm-2 control-label">Date and time</label>
+        <div class="col-sm-10">
+            Dateime Picker!?
+        </div>
+  </div>     
+  <div class="form-group">
+        <label for="ContactType" class="col-sm-2 control-label">Contact type</label>
+        <div class="col-sm-10">
+            <label class="checkbox-inline">
+              <input type="checkbox" id="inlineCheckbox1" value="option1"> Phone 
+            </label>
+            <label class="checkbox-inline">
+              <input type="checkbox" id="inlineCheckbox2" value="option2"> E-mail
+            </label>
+            <label class="checkbox-inline">
+              <input type="checkbox" id="inlineCheckbox3" value="option3"> Walk-in
+            </label>
+        </div>
+  </div>
+  <div class="form-group">
+    <label for="Remarks" class="col-sm-2 control-label">Remarks</label>
+    <div class="col-sm-10">
+          <textarea class="form-control" rows="3" id="Remarks" placeholder="Remarks about this enquiry"></textarea>
+    </div>
+  </div>       
+  <div class="form-group">
+      <label for="EnquiryType" class="col-sm-2 control-label" id="AdresseNameNotCompnay">Enquiry Type</label>
+        <div class="col-sm-10">
+            <label class="checkbox-inline">
+              <input type="checkbox" id="MobileUnitsCheckbox" value="option1"> Mobile Units 
+            </label>
+            <label class="checkbox-inline">
+              <input type="checkbox" id="PrefabStructureCheckbox" value="option2"> Prefab Structure
+            </label>
+            <label class="checkbox-inline">
+              <input type="checkbox" id="TransportCheckbox" value="option3">  Transport 
+            </label>        
+        </div>
+  </div>
+<div id="UnitGenerals">
+    <div><h4>Units General details</h4></div>
+    <div class="form-group">
+        <label for="UnitPurposeFiel" class="col-sm-2 control-label">Puspose of the unit</label>
+        <div class="col-sm-10">
+              <input type="text" class="form-control" id="UnitPurposeFiel" placeholder="What is it going to be used for?"> 
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="UnitSize" class="col-sm-2 control-label">Size</label>
+        <div class="col-sm-10">
+              <input type="text" class="form-control" id="UnitSize" placeholder="m (square, normal meters?)?"> 
+        </div>
+    </div>   
+  <div class="form-group">
+      <label for="" class="col-sm-2 control-label" id="AdresseNameNotCompnay">Drowings</label>
+        <div class="col-sm-10">
+            <label class="checkbox-inline">
+              <input type="text" id="DrowingRequired" class="form-control" placeholder="Number"> 
+            </label>
+            <label class="checkbox-inline">
+              <input type="checkbox" id="DrowingExampleCheckbox" value="option2">  Example
+            </label>
+            <label class="checkbox-inline">
+              <input type="checkbox" id="DrowingSpecificCheckbox" value="option3">  Specific 
+            </label>        
+        </div>
+  </div>    
+</div>       
+<div id="MobileForm">
+    <div><h4>Mobile Units Form</h4></div>
+    <div>{% include 'TeamERPSalesBundle:Enquiry:mobile.html.twig' %}</div>
+</div>  
+<div id="PrefabForm">
+    <div><h4>Prefab Form</h4></div>
+    <div>{% include 'TeamERPSalesBundle:Enquiry:prefab.html.twig' %}</div>
+</div>   
+<div id="TransportForm">
+    <div><h4>Transport Form</h4></div>
+    <div>{% include 'TeamERPSalesBundle:Enquiry:transport.html.twig' %}</div>
+</div>  
+<div class="form-group">
+    <label for="ExtraAddinsCheckbox" class="col-sm-2 control-label">Add optional extras</label>
+    <div class="col-sm-10">
+          <input type="checkbox" id="ExtraAddinsCheckbox" value="option1"> 
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+      <button type="submit" class="btn btn-default">Create Enquiry</button>
+    </div>
+  </div> 
+</form> -->
+<p>Step 1: Customer</p>
+Select or reate a customer.
+<p>Step 2: Enquiry General Inofrmation</p>
+{{form(form)}}
+<p>Step 3.1: Mobile form, it will depend on if Mobile is seleted on the step 2</p>
+{{form(form_mobile)}}
+<p>Step 3.2: Prefab form, it will depend on if Prefabs is seleted on the step 2</p>
+{{form(form_prefab)}}
+<p>Step 3.3: Trnsport</p>
+{{form(form_enquiry_transport)}}
+{% endblock %}
+{% block javascripts %}
+<script src="{{ asset('bundles/teamerpsales/js/functions.js') }}"></script>
+{% endblock %}

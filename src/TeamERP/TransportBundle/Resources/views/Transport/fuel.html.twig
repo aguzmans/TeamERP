@@ -1,0 +1,36 @@
+{% extends "TeamERPTransportBundle::layout.html.twig" %}
+{% block content %}
+<fieldset><legend>Search refueling invoices</legend>
+{{ form(form) }}
+</fieldset>
+<fieldset><legend>List of refueling invoices</legend>
+    <table>
+        <tr>
+            <th>Action</th>
+            <th>Invoice Number</th>
+            <th>Date time</th>
+            <th>Fuel used</th>
+            <th>Fuel Price</th>
+            <th>Fuel Cost</th>
+            <th>Odometer (Km)</th>
+            <th>Registration Number</th>
+            <th>Remarks</th>
+            <th>Refueler</th>
+        </tr>
+    {% for key,value in fuelPurchase %}        
+        <tr>
+            <td><a href="{{path('team_erp_transport_edit_fuel', {'idFuelPurchase' : value.idFuelPurchase })}}">Edit</a> | <a href="">Delete</a></td>
+            <td>{{value.invoice}}</td>
+            <td>{{value.dateTime|date('Y-m-d H:i:s')}}</td>
+            <td>{{value.fuelUsed}}</td>
+            <td>{{value.fuelPrice}}</td>            
+            <td>{{value.getFuelCost}}</td>
+            <td>{{value.kmOdo}}</td>
+            <td>{{value.vehicles.plateNumber}}</td>            
+            <td>{{value.remarks}}</td>
+            <td>{{value.Refueler}}</td>
+        </tr>
+    {% endfor %}
+    </table>
+</fieldset>{% endblock %}
+

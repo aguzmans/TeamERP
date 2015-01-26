@@ -1,0 +1,19 @@
+team_erp_customer_index:
+    pattern:  /{page}/
+    defaults: { _controller: TeamERPCustomerBundle:Customer:index }
+    requirements:
+        page: \d+
+    
+team_erp_customer_new:
+    pattern:  /new/
+    defaults: { _controller: TeamERPCustomerBundle:Customer:new }    
+
+team_erp_customer_edit:
+    pattern:  /edit/{id}/
+    defaults: { _controller: TeamERPCustomerBundle:Customer:edit } 
+    
+team_erp_customer_delete:
+    pattern:  /delete/{id}
+    defaults: { _controller: TeamERPCustomerBundle:Customer:delete }
+
+       

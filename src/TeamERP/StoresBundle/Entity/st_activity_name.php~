@@ -1,0 +1,26 @@
+<?php
+namespace TeamERP\StoresBundle\Entity;
+use Doctrine\ORM\Mapping AS ORM;
+
+/**
+ * @ORM\Entity
+ */
+class st_activity_name
+{
+    /**
+     * @ORM\Id
+     * @ORM\Column(type="integer")
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    private $id;
+
+    /**
+     * @ORM\Column(nullable=true)
+     */
+    private $activity_name;
+
+    /**
+     * @ORM\OneToMany(targetEntity="st_product_activity", mappedBy="activityName")
+     */
+    private $productActivity;
+}

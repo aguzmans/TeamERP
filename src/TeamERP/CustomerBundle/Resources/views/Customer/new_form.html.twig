@@ -1,0 +1,76 @@
+<div class="
+     {% if status == "Saved" or status == "Edited" %}bg-success
+     {% elseif status != "" %}bg-danger
+     {% endif %}"><h4>{{status}}</h4></div>
+{{ form_start(form, {'attr': {'class': 'form-horizontal'}}) }}
+{{ form_errors(form) }}
+<div class="form-group">
+    {{ form_label(form.customer_name, null, {'label_attr': {'class': 'col-sm-2 control-label'}}) }}
+        <div class="col-sm-10">
+          {{ form_widget(form.customer_name, {'attr': {'class': 'form-control', 'placeholder' : 'Customer name'}}) }}
+        </div>
+  </div> 
+<div class="form-group">
+    <label for="NotACompany" class="col-sm-2 control-label">Is a company?</label>
+    <div class="col-sm-10">
+        <input type="checkbox" id="NotACompany"/>
+    </div>
+  </div> 
+    <div class="form-group" id="CompanyName">
+    {{ form_label(form.company, null, {'label_attr': {'class': 'col-sm-2 control-label'}}) }}       
+        <div class="col-sm-10">
+            {{ form_widget(form.company, {'attr': {'class': 'form-control list-unstyled', 'placeholder' : 'Company name'}}) }}
+        </div>   
+    </div>
+  <div class="form-group">
+      {{ form_label(form.address, null, {'label_attr': {'class': 'col-sm-2 control-label'}}) }}
+        <div class="col-sm-10">
+            {{ form_widget(form.address, {'attr': {'class': 'form-control', 'placeholder' : 'Physical address'}}) }}            
+        </div>
+  </div>
+  <div class="form-group">
+      {{ form_label(form.postal_address, null, {'label_attr': {'class': 'col-sm-2 control-label'}}) }}
+    <div class="col-sm-10">
+        {{ form_widget(form.postal_address, {'attr': {'class': 'form-control', 'placeholder' : 'Postal address'}}) }}
+    </div>
+  </div>
+  <div class="form-group">
+      {{ form_label(form.city_town_village, null, {'label_attr': {'class': 'col-sm-2 control-label'}}) }}
+    <div class="col-sm-10">
+        {{ form_widget(form.city_town_village, {'attr': {'class': 'form-control', 'placeholder' : 'Name of the place'}}) }}
+    </div>
+  </div>
+  <div class="form-group">
+      {{ form_label(form.e_mail, null, {'label_attr': {'class': 'col-sm-2 control-label'}}) }}
+    <div class="col-sm-10">      
+        <div class="input-group">
+            <div class="input-group-addon">@</div>{{ form_widget(form.e_mail, {'attr': {'class': 'form-control', 'placeholder' : 'Customer\'s e-mail'}}) }}
+        </div>
+    </div>
+  </div> 
+  <div class="form-group">
+      {{ form_label(form.land_line, null, {'label_attr': {'class': 'col-sm-2 control-label'}}) }}  
+    <div class="col-sm-10">
+        {{ form_widget(form.land_line, {'attr': {'class': 'form-control', 'placeholder' : 'Land line number'}}) }}
+    </div>
+  </div>
+  <div class="form-group">
+      {{ form_label(form.cell_phone, null, {'label_attr': {'class': 'col-sm-2 control-label'}}) }}
+    <div class="col-sm-10">
+        {{ form_widget(form.cell_phone, {'attr': {'class': 'form-control', 'placeholder' : 'Cell number'}}) }}
+    </div>
+  </div>  
+  <div class="form-group">
+      {{ form_label(form.fax, null, {'label_attr': {'class': 'col-sm-2 control-label'}}) }}
+    <div class="col-sm-10">
+        {{ form_widget(form.fax, {'attr': {'class': 'form-control', 'placeholder' : 'Fax number'}}) }}
+    </div>
+  </div>     
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+      {{ form_widget(form.save, {'attr': {'class': 'btn btn-primary'}}) }}
+      {{ form_widget(form.cancel, {'attr': {'class': 'btn btn-default'}}) }}
+    </div> 
+  </div>
+{{ form_end(form) }}   
+

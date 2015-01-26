@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta lang="en" charset="UTF-8" />
+        <title>{% block title %}Team IMS{% endblock %}</title>
+        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+        <script src="{{ asset('bundles/teamerpbase/js/jquery-2.0.0.min.js') }}"></script>
+        <script src="{{ asset('bundles/teamerpbase/js/jquery-ui-1.11.0/jquery-ui.min.js') }}"></script>
+        {% stylesheets filter='cssrewrite'
+           'bundles/teamerpbase/css/bootstrap.min.css'
+           'bundles/teamerpbase/font-awesome/css/font-awesome.min.css'
+           'bundles/teamerpbase/css/styles.css' 
+           'bundles/teamerpbase/js/jquery-ui-1.11.0/jquery-ui.min.css'%}
+            <link rel="stylesheet" href="{{ asset_url }}" /> 
+        {% endstylesheets %}     
+     {% block stylesheets %}{% endblock %}
+    </head>
+    <body>
+
+            {% block body %}
+            <div class="container-fluid">
+                {% block header %}                  
+                {% endblock %}
+                <!-- Main Content and side bars -->        
+                <div id="central" class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <!-- left side bars --> 
+                    <div class="col-lg-2 col-md-2">
+                    {% block leftBar %}            
+                    {% endblock %}
+                    </div>
+                    <div id="central-content-area" class="col-lg-10 col-md-10 col-sm-12 col-xs-12">
+                    {% block contentTitle %}
+                    {% endblock %}
+                    {% block content %}
+                        <div class="bar-status">
+                            {% block status %}          
+                            {% endblock %}
+                        </div> 
+                    {% endblock %}
+                    </div>                
+                    <!--<div class="col-lg-2 col-md-2">-->
+                    <!-- Right side bars -->                         
+                    {#% block  RigthSideBar %#}
+                    {#% endblock %#}
+                    <!--</div>-->
+                </div>
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                {% block footer %}
+                        <p class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center">
+                            <a class="" href="http://www.abelworld.com" target="_blank">Developer Abel Guzman</a>
+                        </p>
+                {% endblock %}
+                </div>  
+                {% block javascripts %}
+                    <script src="{{ asset('bundles/fosjsrouting/js/router.js') }}"></script>
+                    <script src="{{ path('fos_js_routing_js', {"callback": "fos.Router.setData"}) }}"></script>
+                {% endblock %}
+            </div>                    
+            {% endblock %}
+    </body>
+</html>

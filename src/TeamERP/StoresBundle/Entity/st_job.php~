@@ -1,0 +1,31 @@
+<?php
+namespace TeamERP\StoresBundle\Entity;
+use Doctrine\ORM\Mapping AS ORM;
+
+/**
+ * @ORM\Entity
+ */
+class st_job
+{
+    /**
+     * @ORM\Id
+     * @ORM\Column(type="integer")
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    private $id;
+
+    /**
+     * @ORM\Column(type="string", length=50, nullable=true)
+     */
+    private $number;
+
+    /**
+     * @ORM\Column(type="datetime", nullable=true)
+     */
+    private $creation_date;
+
+    /**
+     * @ORM\OneToMany(targetEntity="st_product", mappedBy="job")
+     */
+    private $product;
+}

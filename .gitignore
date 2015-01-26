@@ -1,0 +1,16 @@
+/app/cache/*
+/app/logs/*
+app/bootstrap.php.cache
+vendor/*
+web/bundles/*
+web/css/*
+web/js/*
+web/images/*
+.buildpath
+.project
+.settings
+nbproject
+.idea
+.tm_properties
+TextMate2
+sh.exe.stackdump

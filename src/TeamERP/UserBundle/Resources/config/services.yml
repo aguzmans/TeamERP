@@ -1,0 +1,7 @@
+parameters:
+#    team_erp_user.example.class: TeamERP\UserBundle\Example
+
+services:
+#    team_erp_user.example:
+#        class: %team_erp_user.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

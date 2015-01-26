@@ -1,0 +1,26 @@
+<?php
+namespace TeamERP\CustomerBundle\Entity;
+use Doctrine\ORM\Mapping AS ORM;
+
+/**
+ * @ORM\Entity
+ */
+class Company
+{
+    /**
+     * @ORM\Id
+     * @ORM\Column(type="integer")
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    private $id;
+
+    /**
+     * @ORM\Column(nullable=true)
+     */
+    private $company_name;
+
+    /**
+     * @ORM\OneToMany(targetEntity="TeamERP\CustomerBundle\Entity\Customer", mappedBy="company")
+     */
+    private $customer;
+}

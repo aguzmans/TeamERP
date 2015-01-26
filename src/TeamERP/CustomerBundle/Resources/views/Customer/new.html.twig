@@ -1,0 +1,15 @@
+{% extends "TeamERPCustomerBundle::layout.html.twig" %}
+{% block contentTitle %}
+    <div><h3>New customers</h3></div>
+{% endblock %}
+{% block content %}  
+<script>
+    var data = {{ data|raw }};
+</script>
+{% include 'TeamERPCustomerBundle:Customer:new_form.html.twig' %}
+{% endblock %}
+{% block javascripts %}
+{{ parent()}}
+<script src="{{ asset('bundles/teamerpcustomer/js/functions.js') }}"></script>
+{% endblock %}
+

@@ -1,0 +1,466 @@
+<?xml version="1.0"?>
+<orm-designer version="2.3.5.882" mvc="Symfony2" orm="Doctrine2">
+  <module name="Entity" import-format="Doctrine2Php" import-path="." uuid="aa92e4f9-023b-427d-8515-53889c6cf51b">
+    <entity name="ActivityName" uuid="b86ce0d6-d5ab-4127-919a-d7f1a3235505">
+      <field name="id" type="integer" required="true" primary="true" uuid="451c8d4d-2eb9-4a9a-a487-a441796be0b5">
+        <orm-attributes>
+          <attribute name="generator">
+            <attribute name="strategy">AUTO</attribute>
+          </attribute>
+        </orm-attributes>
+      </field>
+      <field name="activity_name" uuid="0022592e-40ce-4aab-805e-31de70245fd5"/>
+      <orm-attributes>
+        <attribute name="export-file-name">ActivityName.php</attribute>
+      </orm-attributes>
+    </entity>
+    <entity name="AJob" uuid="d5755a24-9d43-4db2-b489-79789438afa5">
+      <field name="id" type="integer" required="true" primary="true" uuid="14d6032b-1c8a-4a99-b98f-57f0d9d891e4">
+        <orm-attributes>
+          <attribute name="generator">
+            <attribute name="strategy">AUTO</attribute>
+          </attribute>
+        </orm-attributes>
+      </field>
+      <field name="number" type="string" size="50" uuid="94fdd077-decf-496d-8b71-04fc3e29ffce"/>
+      <field name="creation_date" type="datetime" uuid="f32568ca-091d-40dc-8068-0be0420c4724"/>
+      <orm-attributes>
+        <attribute name="export-file-name">AJob.php</attribute>
+      </orm-attributes>
+    </entity>
+    <entity name="Category" uuid="8a4cc475-7b0c-4558-83c6-9a84b7c2c881">
+      <field name="id" type="integer" required="true" primary="true" uuid="68fe9ecf-aa75-46bb-90c4-94c60fd69586">
+        <orm-attributes>
+          <attribute name="generator">
+            <attribute name="strategy">AUTO</attribute>
+          </attribute>
+        </orm-attributes>
+      </field>
+      <field name="name" type="string" size="250" uuid="6705ab90-1873-4116-9ff7-3111128d585a"/>
+      <field name="code" type="string" size="50" uuid="7a4bde99-bab6-4957-a319-f64db15c47ba"/>
+      <orm-attributes>
+        <attribute name="export-file-name">Category.php</attribute>
+      </orm-attributes>
+    </entity>
+    <entity name="Company" uuid="7f1d7ad0-9627-4b21-92d7-7f50d12d858f">
+      <field name="id" type="integer" required="true" primary="true" uuid="813e0203-f6c2-4494-aab4-95ff021db2ab">
+        <orm-attributes>
+          <attribute name="generator">
+            <attribute name="strategy">AUTO</attribute>
+          </attribute>
+        </orm-attributes>
+      </field>
+      <field name="company_name" uuid="aef0b539-fc14-4bcd-8ecd-85c7dd579162"/>
+      <orm-attributes>
+        <attribute name="export-file-name">Company.php</attribute>
+      </orm-attributes>
+    </entity>
+    <entity name="Customer" uuid="2598f18a-c5ba-4647-8215-c74e845cd238">
+      <field name="id" type="integer" required="true" primary="true" uuid="9f9a61d2-2f58-49cb-be65-29d4119e0421">
+        <orm-attributes>
+          <attribute name="generator">
+            <attribute name="strategy">AUTO</attribute>
+          </attribute>
+        </orm-attributes>
+      </field>
+      <field name="customer_name" type="string" size="250" uuid="53a56a6c-d426-40da-a8e2-91e49fc314da"/>
+      <field name="address" type="text" uuid="08e477a3-c8e4-4ef4-ad17-0fe5316d0e06"/>
+      <field name="postal_address" type="string" size="250" uuid="c8b8cc3c-bed0-454c-9fa3-9b01a7b50ba0"/>
+      <field name="city_town_village" type="string" size="250" uuid="630e8f05-e2df-4a3a-8ad0-e27e76ec81f9"/>
+      <field name="e_mail" type="string" size="250" uuid="ef407633-bf07-4540-84e5-1b1a77441ba8"/>
+      <field name="land_line" type="string" size="30" uuid="257fa25a-d802-498c-a10a-d9396b32e2e2"/>
+      <field name="cell_phone" type="string" size="30" uuid="d88628b4-5651-4dcf-9221-00547ba1bd62"/>
+      <field name="fax" type="string" size="30" uuid="400c4e22-ad63-4544-a3f8-89ddc050ad4a"/>
+      <field name="company_id" uuid="54aefcc0-a5a7-4890-86b5-de82505f5a87"/>
+      <orm-attributes>
+        <attribute name="repository-class">TeamERP\CustomerBundle\Entity\CustomerRepository</attribute>
+        <attribute name="export-file-name">Customer.php</attribute>
+      </orm-attributes>
+    </entity>
+    <association from="Customer" to="Company" owner-alias="customer" inverse-alias="company" uuid="17a14b8b-5d52-4879-ba3f-f74dc005ec6a">
+      <association-field from="company_id" to="id"/>
+      <orm-attributes>
+        <attribute name="side-owning">
+          <attribute name="cascade">
+            <attribute name="persist">true</attribute>
+          </attribute>
+        </attribute>
+        <attribute name="side-inverse"/>
+      </orm-attributes>
+    </association>
+    <entity name="FuelPurchase" uuid="230e9e48-2908-4678-9232-7c5a460b96c1">
+      <field name="idFuelPurchase" type="integer" required="true" primary="true" uuid="53b1fe94-2579-4516-8da4-257e35539df6">
+        <orm-attributes>
+          <attribute name="column">id_fuel_purchase</attribute>
+          <attribute name="generator">
+            <attribute name="strategy">AUTO</attribute>
+          </attribute>
+        </orm-attributes>
+      </field>
+      <field name="invoice" type="string" size="20" uuid="1428aa39-5c57-4dc4-b804-206805cf088e">
+        <orm-attributes>
+          <attribute name="column">invoice_number</attribute>
+        </orm-attributes>
+      </field>
+      <field name="dateTime" type="datetime" uuid="beb9b923-4a88-46cb-8ed9-2dd1b9b6fc1b">
+        <orm-attributes>
+          <attribute name="column">date_time</attribute>
+        </orm-attributes>
+      </field>
+      <field name="fuelUsed" type="float" uuid="0f105142-2ed4-45ae-8231-e7e75bf10e25">
+        <orm-attributes>
+          <attribute name="column">fuel_used</attribute>
+        </orm-attributes>
+      </field>
+      <field name="fuelPrice" type="float" uuid="253cf54a-c186-40b5-a13b-d914ba2d463c">
+        <orm-attributes>
+          <attribute name="column">fuel_price</attribute>
+        </orm-attributes>
+      </field>
+      <field name="kmOdo" type="float" uuid="8b20ae8c-d57a-4ab6-b390-89a2e3b234e2">
+        <orm-attributes>
+          <attribute name="column">km_odo</attribute>
+        </orm-attributes>
+      </field>
+      <field name="remarks" type="string" size="250" uuid="5b96d7f5-382a-4043-9b36-f8b0b0d1dc40">
+        <orm-attributes>
+          <attribute name="column">refuling_remarks</attribute>
+        </orm-attributes>
+      </field>
+      <field name="refueler" type="string" size="100" uuid="e3ed9a30-5324-46b4-b20e-e3a50649819c">
+        <orm-attributes>
+          <attribute name="column">refuling_person</attribute>
+        </orm-attributes>
+      </field>
+      <field name="id_vehicle" uuid="1fb6b989-f040-4e3e-a446-3aea1b0b36fc"/>
+      <orm-attributes>
+        <attribute name="repository-class">TeamERP\TransportBundle\Entity\FuelPurchaseRepository</attribute>
+        <attribute name="table">fuel_purchase</attribute>
+        <attribute name="export-file-name">FuelPurchase.php</attribute>
+      </orm-attributes>
+    </entity>
+    <association from="FuelPurchase" to="Vehicle" owner-alias="fuelPurchaces" inverse-alias="vehicles" uuid="6a755c64-69c6-42a1-8854-e71f3b0a8198">
+      <association-field from="id_vehicle" to="idVehicle"/>
+      <orm-attributes>
+        <attribute name="side-owning"/>
+        <attribute name="side-inverse"/>
+      </orm-attributes>
+    </association>
+    <entity name="Job" uuid="8b9af6e4-210f-4f36-9291-ae9cba627d1c">
+      <field name="idJob" type="integer" required="true" primary="true" uuid="fd9bca49-fff3-40fc-ac60-5a2ca29cd55a">
+        <orm-attributes>
+          <attribute name="column">id_job</attribute>
+          <attribute name="generator">
+            <attribute name="strategy">AUTO</attribute>
+          </attribute>
+        </orm-attributes>
+      </field>
+      <field name="deliveryNo" type="string" size="20" uuid="f3e9df99-27c9-48e1-b11d-ddac8edf2724">
+        <orm-attributes>
+          <attribute name="column">delivery_number</attribute>
+        </orm-attributes>
+      </field>
+      <field name="dateTime" type="datetime" uuid="7abedd26-6a1d-4777-a186-5c49e07bce23">
+        <orm-attributes>
+          <attribute name="column">date_time</attribute>
+        </orm-attributes>
+      </field>
+      <field name="destination" type="string" size="200" uuid="2d106337-85d3-448d-a6a9-c7ca7bb55b96">
+        <orm-attributes>
+          <attribute name="column">destination</attribute>
+        </orm-attributes>
+      </field>
+      <field name="kmOdoStart" type="float" uuid="fb1869f3-4e44-4f06-8b41-eaf32293930b">
+        <orm-attributes>
+          <attribute name="column">km_odo_start</attribute>
+        </orm-attributes>
+      </field>
+      <field name="kmOdoEnd" type="float" uuid="24730e9d-d982-4703-a87e-69099a4fcf03">
+        <orm-attributes>
+          <attribute name="column">km_odo_end</attribute>
+        </orm-attributes>
+      </field>
+      <field name="fuelUsedLitre" type="float" uuid="66f94da4-7e5b-40d9-8d02-06ffd55ac8cc">
+        <orm-attributes>
+          <attribute name="column">fuel_used</attribute>
+        </orm-attributes>
+      </field>
+      <field name="fuelPrice" type="float" uuid="b0a36f93-d4d7-4da4-bd15-f05bf65f9749">
+        <orm-attributes>
+          <attribute name="column">fuel_price</attribute>
+        </orm-attributes>
+      </field>
+      <field name="driverName" type="string" size="100" uuid="a40df73e-0222-4d62-a3e6-984f5f6825fc">
+        <orm-attributes>
+          <attribute name="column">driver_name</attribute>
+        </orm-attributes>
+      </field>
+      <field name="crewNames" type="string" size="250" uuid="1ef5d89c-c48d-4284-9b84-562331fcb794">
+        <orm-attributes>
+          <attribute name="column">crew_names</attribute>
+        </orm-attributes>
+      </field>
+      <field name="trilerPlateNumber" type="string" size="7" uuid="d07beda1-8a80-430e-a422-996fb6f54f28">
+        <orm-attributes>
+          <attribute name="column">triler_plate_number</attribute>
+        </orm-attributes>
+      </field>
+      <field name="remarks" type="string" size="500" uuid="9b6c36aa-d22c-446c-8f47-47ec92b2add6">
+        <orm-attributes>
+          <attribute name="column">remarks</attribute>
+        </orm-attributes>
+      </field>
+      <field name="returnLoadPlan" type="string" size="500" uuid="fb8f28ad-7c50-4ec1-a2c3-0243c68fdefb">
+        <orm-attributes>
+          <attribute name="column">return_load_plan</attribute>
+        </orm-attributes>
+      </field>
+      <field name="id_vehicle" uuid="ee226775-0fa0-4bac-a4b2-3c230d82ab24"/>
+      <field name="id_job_status" uuid="eaaf8444-d20b-44ed-81fe-f55a4cfc0f2d"/>
+      <field name="id_job_type" uuid="bd5855a6-a387-4903-a680-f8fa00fee210"/>
+      <orm-attributes>
+        <attribute name="repository-class">TeamERP\TransportBundle\Entity\JobRepository</attribute>
+        <attribute name="table">job</attribute>
+        <attribute name="export-file-name">Job.php</attribute>
+      </orm-attributes>
+    </entity>
+    <association from="Job" to="Vehicle" owner-alias="jobs" inverse-alias="Vehicles" uuid="4841fbfe-a610-4fd1-8f32-823615fb41da">
+      <association-field from="id_vehicle" to="idVehicle"/>
+      <orm-attributes>
+        <attribute name="side-owning"/>
+        <attribute name="side-inverse"/>
+      </orm-attributes>
+    </association>
+    <association from="Job" to="JobStatus" owner-alias="" inverse-alias="jobStatus" uuid="e6dbcc58-24a3-4a3f-9514-f00fd742d127">
+      <association-field from="id_job_status" to="idJobStatus"/>
+      <orm-attributes>
+        <attribute name="side-owning"/>
+        <attribute name="side-inverse"/>
+      </orm-attributes>
+    </association>
+    <association from="Job" to="JobType" owner-alias="" inverse-alias="jobType" uuid="e2c5ff68-e272-4940-b1a3-422da02c8613">
+      <association-field from="id_job_type" to="idJobtype"/>
+      <orm-attributes>
+        <attribute name="side-owning"/>
+        <attribute name="side-inverse"/>
+      </orm-attributes>
+    </association>
+    <entity name="JobStatus" uuid="09aabe02-59b9-4997-a767-26f94949c748">
+      <field name="idJobStatus" type="integer" required="true" primary="true" uuid="d0bab98e-aa26-45c6-ae64-89a9b88b12f8">
+        <orm-attributes>
+          <attribute name="column">id_job_status</attribute>
+          <attribute name="generator">
+            <attribute name="strategy">AUTO</attribute>
+          </attribute>
+        </orm-attributes>
+      </field>
+      <field name="description" type="string" size="20" uuid="1b59bd3b-8cc9-4f6d-b850-867100e1b4e1">
+        <orm-attributes>
+          <attribute name="column">description</attribute>
+        </orm-attributes>
+      </field>
+      <orm-attributes>
+        <attribute name="table">job_status</attribute>
+        <attribute name="export-file-name">JobStatus.php</attribute>
+      </orm-attributes>
+    </entity>
+    <entity name="JobType" uuid="6edcd2e5-3158-4f03-91cb-af61b7bcab91">
+      <field name="idJobtype" type="integer" required="true" primary="true" uuid="43d0a554-ea5b-4bdc-9178-6599ad3476b8">
+        <orm-attributes>
+          <attribute name="column">id_job_type</attribute>
+          <attribute name="generator">
+            <attribute name="strategy">AUTO</attribute>
+          </attribute>
+        </orm-attributes>
+      </field>
+      <field name="description" type="string" size="20" uuid="adcc00fc-5e46-49a9-a26e-e4244a71f1b2">
+        <orm-attributes>
+          <attribute name="column">description</attribute>
+        </orm-attributes>
+      </field>
+      <field name="code" type="string" size="20" uuid="3212d4b5-881c-4fd2-9def-25e67f32fc36">
+        <orm-attributes>
+          <attribute name="column">code</attribute>
+        </orm-attributes>
+      </field>
+      <orm-attributes>
+        <attribute name="table">job_type</attribute>
+        <attribute name="export-file-name">JobType.php</attribute>
+      </orm-attributes>
+    </entity>
+    <entity name="MesureUnit" uuid="c8602787-0d11-4385-a08b-28e23c812fe5">
+      <field name="id" type="integer" required="true" primary="true" uuid="a4164ed1-4366-4645-ac3d-bbc69bd9d470">
+        <orm-attributes>
+          <attribute name="generator">
+            <attribute name="strategy">AUTO</attribute>
+          </attribute>
+        </orm-attributes>
+      </field>
+      <field name="name" type="string" size="100" uuid="fcec5a64-c50a-4ac1-a2f6-f4b4461c2de5"/>
+      <field name="abreviation" type="string" size="10" uuid="ebdbde2c-9f90-4e78-a74a-288e3c5d7c90"/>
+      <orm-attributes>
+        <attribute name="export-file-name">MesureUnit.php</attribute>
+      </orm-attributes>
+    </entity>
+    <entity name="Product" uuid="8267895e-792e-402e-b120-4ca9d6b82555">
+      <field name="id" type="integer" required="true" primary="true" uuid="136628b0-d53e-4a18-a124-f09219b471f4">
+        <orm-attributes>
+          <attribute name="generator">
+            <attribute name="strategy">AUTO</attribute>
+          </attribute>
+        </orm-attributes>
+      </field>
+      <field name="code" type="string" size="50" uuid="8b86ec75-c3d9-457d-a615-74ea2e33add1"/>
+      <field name="description" type="string" size="250" uuid="1c342a63-46e7-42c1-ad2c-e8af11280ff0"/>
+      <field name="date_received" type="datetime" uuid="5fbeef95-ebf8-499f-b2f4-92776d7c9a24"/>
+      <field name="category_id" uuid="5c4b4bc9-ebd6-4f53-9b36-2d81efc05935"/>
+      <field name="job_id" uuid="30bb1977-60fc-4d64-b9b3-2c505394d955"/>
+      <orm-attributes>
+        <attribute name="export-file-name">Product.php</attribute>
+      </orm-attributes>
+    </entity>
+    <association from="Product" to="Category" owner-alias="product" inverse-alias="category" uuid="dcd87b35-9667-4f28-b65a-7bf11283ac1c">
+      <association-field from="category_id" to="id"/>
+      <orm-attributes>
+        <attribute name="side-owning"/>
+        <attribute name="side-inverse"/>
+      </orm-attributes>
+    </association>
+    <association from="Product" to="AJob" owner-alias="" inverse-alias="aJob" uuid="5dd18248-1628-43c2-ac6e-052fadf6a90c">
+      <association-field from="job_id" to="id"/>
+      <orm-attributes>
+        <attribute name="side-owning"/>
+        <attribute name="side-inverse"/>
+      </orm-attributes>
+    </association>
+    <entity name="MesureUnit2Product" uuid="ad52e43a-a934-49ed-acd8-77908e08d578">
+      <field name="id" type="integer" required="true" unique="true" primary="true" uuid="ceb8835f-50ed-46ff-b0a1-ea2d8bd69ec5"/>
+      <field name="product_id" required="true" uuid="b075cd94-da5e-4769-b0a4-4c08caa0d028"/>
+      <field name="mesure_unit_id" required="true" uuid="7615daff-b318-416c-b83f-94ac1cb1dea1"/>
+    </entity>
+    <many-to-many mn-entity="MesureUnit2Product" uuid="c91de6e8-c998-4fc0-a763-d60152d9153e">
+      <many-to-many-entity name="Product" owning-side="true" alias="product" uuid="a0c9fb04-0da4-4129-99b6-a2ac74444e52">
+        <many-to-many-field from="product_id" to="id"/>
+      </many-to-many-entity>
+      <many-to-many-entity name="MesureUnit" owning-side="false" alias="mesureUnit" uuid="01ec02b9-bd94-4822-836d-40430d921b03">
+        <many-to-many-field from="mesure_unit_id" to="id"/>
+      </many-to-many-entity>
+    </many-to-many>
+    <entity name="ProductActivity" uuid="1a975fcd-f182-46cb-b188-4daae8c2e910">
+      <field name="id" type="integer" required="true" primary="true" uuid="baef8a5e-000d-4cb3-84b9-bbb35924adf6">
+        <orm-attributes>
+          <attribute name="generator">
+            <attribute name="strategy">AUTO</attribute>
+          </attribute>
+        </orm-attributes>
+      </field>
+      <field name="balace_type" type="string" size="1" uuid="59ff126a-b734-4026-91ab-31e4038e7a86"/>
+      <field name="action_quantity" type="float" uuid="49f8c542-7e7f-4191-853e-896174c8b1d3"/>
+      <field name="action_requested" type="float" uuid="4be2a5e0-da66-4503-a177-84f0866fd660"/>
+      <field name="action_date" type="datetime" uuid="bf370e36-de16-4876-bbe7-b8babd5279cf"/>
+      <field name="cost_x_unit" type="float" uuid="46ef7f17-1804-4e3b-bd3a-649b903e72cc"/>
+      <field name="supplier" type="string" size="250" uuid="185cc76f-0aa7-4bbd-9fbf-86ff0ceb9f04"/>
+      <field name="activity_name_id" uuid="28d2a039-9e2f-46b0-8fa0-420f264ab486"/>
+      <field name="product_id" uuid="8595d9c1-0179-4a52-a5b0-b9bce09ba252"/>
+      <field name="mesure_unit_id" uuid="c21f226d-9705-4a08-be15-9d7f29ca2c9a"/>
+      <orm-attributes>
+        <attribute name="export-file-name">ProductActivity.php</attribute>
+      </orm-attributes>
+    </entity>
+    <association from="ProductActivity" to="ActivityName" owner-alias="productActivity" inverse-alias="activityName" uuid="3dca8f00-28fb-40cb-8b59-cc731025708b">
+      <association-field from="activity_name_id" to="id"/>
+      <orm-attributes>
+        <attribute name="side-owning"/>
+        <attribute name="side-inverse"/>
+      </orm-attributes>
+    </association>
+    <association from="ProductActivity" to="Product" owner-alias="pproductActivity" inverse-alias="product" uuid="45e726c9-be98-4dc7-baf1-2812b0d08609">
+      <association-field from="product_id" to="id"/>
+      <orm-attributes>
+        <attribute name="side-owning"/>
+        <attribute name="side-inverse"/>
+      </orm-attributes>
+    </association>
+    <association from="ProductActivity" to="MesureUnit" owner-alias="pproductActivity" inverse-alias="mesureUnit" uuid="12c8f4ac-1d14-4fd7-8b00-98e8e420bc47">
+      <association-field from="mesure_unit_id" to="id"/>
+      <orm-attributes>
+        <attribute name="side-owning"/>
+        <attribute name="side-inverse"/>
+      </orm-attributes>
+    </association>
+    <entity name="User" uuid="24e60dda-5fd0-425b-9b96-90058d8eaae6">
+      <field name="id" type="integer" required="true" primary="true" uuid="f068d399-8989-45ee-9a82-fc0c37a27731">
+        <orm-attributes>
+          <attribute name="generator">
+            <attribute name="strategy">AUTO</attribute>
+          </attribute>
+        </orm-attributes>
+      </field>
+      <orm-attributes>
+        <attribute name="table">fos_user</attribute>
+        <attribute name="export-file-name">User.php</attribute>
+      </orm-attributes>
+    </entity>
+    <entity name="Vehicle" uuid="4c749eab-e16d-45a9-8ae7-faedf3bd3b05">
+      <field name="idVehicle" type="integer" required="true" primary="true" uuid="945e6258-c884-4ae5-8f82-c2a2d7f00947">
+        <orm-attributes>
+          <attribute name="column">id_vehicle</attribute>
+          <attribute name="generator">
+            <attribute name="strategy">AUTO</attribute>
+          </attribute>
+        </orm-attributes>
+      </field>
+      <field name="plateNumber" type="string" size="7" uuid="5a2bdc83-fd85-4c77-be09-e0b498e49c27">
+        <orm-attributes>
+          <attribute name="column">plate_number</attribute>
+        </orm-attributes>
+      </field>
+      <field name="DistanceToServiceKm" type="integer" uuid="efd305db-95b0-4cd5-84aa-0bfe33c4b665">
+        <orm-attributes>
+          <attribute name="column">distance_to_service</attribute>
+        </orm-attributes>
+      </field>
+      <field name="lastServiceODOKm" type="integer" uuid="fb64d877-1b35-4ffa-86b8-ab308aa11eff">
+        <orm-attributes>
+          <attribute name="column">last_service_odo</attribute>
+        </orm-attributes>
+      </field>
+      <field name="makeName" type="string" size="100" uuid="00f379ec-155c-4c57-9538-1bbf02dd5b92">
+        <orm-attributes>
+          <attribute name="column">make</attribute>
+        </orm-attributes>
+      </field>
+      <field name="modelName" type="string" size="100" uuid="6dbb1054-c6c2-494d-b5e3-e197e28e712f">
+        <orm-attributes>
+          <attribute name="column">model</attribute>
+        </orm-attributes>
+      </field>
+      <orm-attributes>
+        <attribute name="repository-class">TeamERP\TransportBundle\Entity\VehicleRepository</attribute>
+        <attribute name="table">vehicle</attribute>
+        <attribute name="export-file-name">Vehicle.php</attribute>
+      </orm-attributes>
+    </entity>
+    <orm-attributes>
+      <attribute name="namespace">TeamERP\TransportBundle\Entity</attribute>
+    </orm-attributes>
+  </module>
+  <visual-data>
+    <entity uuid="09aabe02-59b9-4997-a767-26f94949c748" position-x="379" position-y="1" size-x="0" size-x2="118" size-y="0" size-y2="45"/>
+    <entity uuid="1a975fcd-f182-46cb-b188-4daae8c2e910" position-x="423" position-y="602" size-x="0" size-x2="124" size-y="0" size-y2="157"/>
+    <entity uuid="230e9e48-2908-4678-9232-7c5a460b96c1" position-x="195" position-y="280" size-x="0" size-x2="126" size-y="0" size-y2="143"/>
+    <entity uuid="24e60dda-5fd0-425b-9b96-90058d8eaae6" position-x="640" position-y="-24" size-x="0" size-x2="69" size-y="0" size-y2="31"/>
+    <entity uuid="2598f18a-c5ba-4647-8215-c74e845cd238" position-x="798" position-y="40" size-x="0" size-x2="150" size-y="0" size-y2="157"/>
+    <entity uuid="4c749eab-e16d-45a9-8ae7-faedf3bd3b05" position-x="374" position-y="208" size-x="0" size-x2="154" size-y="0" size-y2="101"/>
+    <entity uuid="6edcd2e5-3158-4f03-91cb-af61b7bcab91" position-x="404" position-y="86" size-x="0" size-x2="118" size-y="0" size-y2="59"/>
+    <entity uuid="7f1d7ad0-9627-4b21-92d7-7f50d12d858f" position-x="633" position-y="40" size-x="0" size-x2="92" size-y="0" size-y2="45"/>
+    <entity uuid="8267895e-792e-402e-b120-4ca9d6b82555" position-x="32" position-y="602" size-x="0" size-x2="129" size-y="0" size-y2="101"/>
+    <entity uuid="8a4cc475-7b0c-4558-83c6-9a84b7c2c881" position-x="50" position-y="464" size-x="0" size-x2="101" size-y="0" size-y2="59"/>
+    <entity uuid="8b9af6e4-210f-4f36-9291-ae9cba627d1c" position-x="164" position-y="-20" size-x="0" size-x2="140" size-y="0" size-y2="241"/>
+    <module uuid="aa92e4f9-023b-427d-8515-53889c6cf51b" bk-color="4294375930" position-x="50" position-y="50" size-x="0" size-x2="970" size-y="40" size-y2="863"/>
+    <entity uuid="ad52e43a-a934-49ed-acd8-77908e08d578" position-x="228" position-y="602" size-x="0" size-x2="126" size-y="0" size-y2="74"/>
+    <entity uuid="b86ce0d6-d5ab-4127-919a-d7f1a3235505" position-x="418" position-y="455" size-x="0" size-x2="85" size-y="0" size-y2="45"/>
+    <entity uuid="c8602787-0d11-4385-a08b-28e23c812fe5" position-x="227" position-y="484" size-x="0" size-x2="119" size-y="0" size-y2="59"/>
+    <entity uuid="d5755a24-9d43-4db2-b489-79789438afa5" position-x="172" position-y="736" size-x="0" size-x2="126" size-y="0" size-y2="59"/>
+  </visual-data>
+</orm-designer>

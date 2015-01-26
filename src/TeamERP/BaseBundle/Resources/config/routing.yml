@@ -1,0 +1,3 @@
+team_erp_base_homepage:
+    pattern:  /
+    defaults: { _controller: TeamERPBaseBundle:General:index }

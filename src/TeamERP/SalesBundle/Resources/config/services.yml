@@ -1,0 +1,55 @@
+parameters:
+#    team_erp_sales.example.class: TeamERP\SalesBundle\Example
+
+services:
+#    team_erp_sales.example:
+#        class: %team_erp_sales.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]
+    teamerp_sales.form.type.enquiry_general:
+        class: TeamERP\SalesBundle\Form\Type\EnquiryGeneralType
+        tags:
+            - { name: form.type, alias: enquiry_general }
+    teamerp_sales.form.type.mobile:
+        class: TeamERP\SalesBundle\Form\Type\MobileType
+        tags:
+            - { name: form.type, alias: mobile }
+    teamerp_sales.form.type.prefab:
+        class: TeamERP\SalesBundle\Form\Type\PrefabType
+        tags:
+            - { name: form.type, alias: prefab }             
+    teamerp_sales.form.type.enquiry_transport:
+        class: TeamERP\SalesBundle\Form\Type\TransportType
+        tags:
+            - { name: form.type, alias: enquiry_transport }  
+    teamerp_sales.form.type.extra_feature:
+        class: TeamERP\SalesBundle\Form\Type\ExtraFeatureType
+        tags:
+            - { name: form.type, alias: extra_feature }    
+
+    teamerp.menu_builder_sales:
+        class: TeamERP\SalesBundle\Menu\BuilderLeftSideBarSales
+        arguments: ["@knp_menu.factory", "@security.context"]
+    
+
+        
+    teamerp.menu.leftsidebarsales:
+        class: Knp\Menu\MenuItem
+        factory_service: teamerp.menu_builder_sales
+        factory_method: leftSideBarSales
+        arguments: ["@request"]
+        scope: request 
+        tags:
+            - { name: knp_menu.menu, alias: side_left_sales }   
+            
+    sylius.scenario.flow_enquiry:
+        class: TeamERP\SalesBundle\Process\EnquiryScenario
+        arguments: [@service_container]
+        tags:
+            - { name: sylius.process.scenario, alias: sylius_flow_enquiry }
+
+#<service id="sylius.scenario.flow" class="Acme\DemoBundle\Process\SyliusScenario"
+#<call method="setContainer">
+#<argument type="service" id="service_container" />
+#</call>
+#<tag name="sylius.process.scenario" alias="sylius_flow" />
+#</service>        

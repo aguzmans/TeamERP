@@ -1,0 +1,20 @@
+#need to add the root of the bundle on this route
+team_erp_sales_homepage:
+    pattern:  /enquiry/
+    defaults: { _controller: TeamERPSalesBundle:Enquiry:index }
+
+#team_erp_sales_enquiry:
+#    pattern:  /enquiry
+#    defaults: { _controller: TeamERPSalesBundle:Enquiry:index }
+
+team_erp_sales_enquiry_new:
+    pattern:  /enquiry/new/
+    defaults: { _controller: TeamERPSalesBundle:Enquiry:new }
+
+#team_erp_sales_enquiry_flow:
+#    pattern:  /enquiry/flow/
+#    defaults: { _controller: TeamERPSalesBundle:Enquiry:new }
+
+sylius_flow:
+    resource: @SyliusFlowBundle/Resources/config/routing.yml
+    prefix: /flow    

@@ -1,0 +1,39 @@
+team_erp_transport_homepage:
+    pattern:  /
+    defaults: { _controller: TeamERPTransportBundle:Default:index }
+
+team_erp_transport_register_job:
+    pattern:  /register
+    defaults: { _controller: TeamERPTransportBundle:Registerjob:register }
+
+team_erp_transport_edit_job:
+    pattern:  /edit/{idJob}/
+    defaults: { _controller: TeamERPTransportBundle:Registerjob:edit }
+
+team_erp_transport_register_fuel:
+    pattern:  /fuel/register/
+    defaults: { _controller: TeamERPTransportBundle:Fuel:RegisterFueling }
+
+team_erp_transport_search_fuel:
+    pattern:  /fuel/search/
+    defaults: { _controller: TeamERPTransportBundle:Fuel:index }    
+    
+team_erp_transport_edit_fuel:
+    pattern:  /fuel/edit/{idFuelPurchase}
+    defaults: { _controller: TeamERPTransportBundle:Fuel:edit } 
+team_erp_transport_render_report:
+    pattern:  /render
+    defaults: { _controller: TeamERPTransportBundle:Reports:render }    
+    
+   
+#Sample Sylius resouce bundle
+team_erp_transport_job_index:
+    pattern: /jobs/
+    defaults:
+        _controller: teamerp.controller.job:indexAction    
+
+team_erp_transport_job_show:
+    pattern: /jobs/{idJob}
+    methods: [GET]
+    defaults:
+        _controller: teamerp.controller.job:showAction

@@ -1,0 +1,17 @@
+{% extends "TeamERPTransportBundle::layout.html.twig" %}
+{% block leftBar %}
+<fieldset class="bar-left"><legend>Transport Menu</legend>
+    <div class="bar-left-content bar-left-input-links"><p>Data Input</p>
+        <a href="{{path('team_erp_transport_register_job')}}">New job</a> |<br>
+        <a href="{{path('team_erp_transport_register_fuel')}}">New Refueling</a> |<br>
+    </div>
+    <div class="bar-left-content bar-left-search-reports"><p>Search & Reports</p>
+    <a href="{{path('team_erp_transport_homepage')}}">Job overview search</a> |<br>
+    <a href="{{path('team_erp_transport_search_fuel')}}">Refuel overview Search</a> |<br>
+    <a href="{{path('team_erp_transport_render_report')}}">Reports</a> | 
+    </div>
+    <div class="bar-left-content bar-left-config"><p>Configuration</p>
+    </div>
+</fieldset>
+{% endblock %}
+

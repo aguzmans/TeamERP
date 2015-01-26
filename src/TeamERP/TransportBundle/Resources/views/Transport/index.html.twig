@@ -1,0 +1,40 @@
+{% extends "TeamERPTransportBundle::layout.html.twig" %}
+{% block content %}
+<fieldset><legend>Search jobs</legend>
+{{ form(form) }}
+</fieldset>
+<fieldset><legend>List of works</legend>
+    <table class="table table-striped">
+        <tr>
+            <th>Action</th>
+            <th>Job Number</th>
+            <th>Date time</th>
+            <th>Destination</th>
+            <th>Job type</th>
+            <th>Vehicle</th>
+            <th>Job distance</th>
+            <th>Driver</th>
+            <th>Crew</th>
+            <th>Trailer</th>
+            <th>Remarks</th>
+            <th>Status</th>
+        </tr>
+    {% for key,value in Jobs %}        
+        <tr>
+            <td><a href="{{path('team_erp_transport_edit_job', {'idJob' : value.idJob })}}">Edit</a> | <a href="">Delete</a></td>
+            <td>{{value.deliveryNo}}</td>
+            <td>{{value.dateTime|date('Y-m-d H:i:s')}}</td>
+            <td>{{value.destination}}</td>
+            <td>{{value.jobType.description}}</td>
+            <td>{{value.Vehicles.plateNumber}}</td>
+            <td>{{value.getJobDistance}}</td>
+            <td>{{value.driverName}}</td>
+            <td>{{value.crewNames}}</td>
+            <td>{{value.trilerPlateNumber}}</td>
+            <td>{{value.remarks}}</td>
+            <td>{{value.jobStatus.description}}</td>
+        </tr>
+    {% endfor %}
+    </table>
+</fieldset>{% endblock %}
+

@@ -1,0 +1,7 @@
+parameters:
+#    team_erp_stores.example.class: TeamERP\StoresBundle\Example
+
+services:
+#    team_erp_stores.example:
+#        class: %team_erp_stores.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

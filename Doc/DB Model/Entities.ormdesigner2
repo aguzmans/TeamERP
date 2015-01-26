@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<orm-designer version="2.3.5.882" name="Entities" mvc="Symfony2" orm="Doctrine2" uuid="96e51775-dd98-4516-8c1d-f75ac8144494">
+  <external-module storage-path="Entity.module.xml"/>
+  <visual-data>
+    <entity uuid="09aabe02-59b9-4997-a767-26f94949c748" position-x="379" position-y="1" size-x="0" size-x2="118" size-y="0" size-y2="45"/>
+    <entity uuid="1a975fcd-f182-46cb-b188-4daae8c2e910" position-x="423" position-y="602" size-x="0" size-x2="124" size-y="0" size-y2="157"/>
+    <entity uuid="230e9e48-2908-4678-9232-7c5a460b96c1" position-x="195" position-y="280" size-x="0" size-x2="126" size-y="0" size-y2="143"/>
+    <entity uuid="24e60dda-5fd0-425b-9b96-90058d8eaae6" position-x="640" position-y="-24" size-x="0" size-x2="69" size-y="0" size-y2="31"/>
+    <entity uuid="2598f18a-c5ba-4647-8215-c74e845cd238" position-x="798" position-y="40" size-x="0" size-x2="150" size-y="0" size-y2="157"/>
+    <entity uuid="4c749eab-e16d-45a9-8ae7-faedf3bd3b05" position-x="374" position-y="208" size-x="0" size-x2="154" size-y="0" size-y2="101"/>
+    <entity uuid="6edcd2e5-3158-4f03-91cb-af61b7bcab91" position-x="404" position-y="86" size-x="0" size-x2="118" size-y="0" size-y2="59"/>
+    <entity uuid="7f1d7ad0-9627-4b21-92d7-7f50d12d858f" position-x="633" position-y="40" size-x="0" size-x2="92" size-y="0" size-y2="45"/>
+    <entity uuid="8267895e-792e-402e-b120-4ca9d6b82555" position-x="32" position-y="602" size-x="0" size-x2="129" size-y="0" size-y2="101"/>
+    <entity uuid="8a4cc475-7b0c-4558-83c6-9a84b7c2c881" position-x="50" position-y="464" size-x="0" size-x2="101" size-y="0" size-y2="59"/>
+    <entity uuid="8b9af6e4-210f-4f36-9291-ae9cba627d1c" position-x="164" position-y="-20" size-x="0" size-x2="140" size-y="0" size-y2="241"/>
+    <project uuid="96e51775-dd98-4516-8c1d-f75ac8144494" size-x="0" size-x2="1070" size-y="0" size-y2="963"/>
+    <module uuid="aa92e4f9-023b-427d-8515-53889c6cf51b" bk-color="4294375930" position-x="50" position-y="50" size-x="0" size-x2="970" size-y="40" size-y2="863"/>
+    <entity uuid="ad52e43a-a934-49ed-acd8-77908e08d578" position-x="228" position-y="602" size-x="0" size-x2="126" size-y="0" size-y2="74"/>
+    <entity uuid="b86ce0d6-d5ab-4127-919a-d7f1a3235505" position-x="418" position-y="455" size-x="0" size-x2="85" size-y="0" size-y2="45"/>
+    <entity uuid="c8602787-0d11-4385-a08b-28e23c812fe5" position-x="227" position-y="484" size-x="0" size-x2="119" size-y="0" size-y2="59"/>
+    <entity uuid="d5755a24-9d43-4db2-b489-79789438afa5" position-x="172" position-y="736" size-x="0" size-x2="126" size-y="0" size-y2="59"/>
+  </visual-data>
+</orm-designer>

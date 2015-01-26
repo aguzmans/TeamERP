@@ -1,0 +1,35 @@
+parameters:
+#    team_erp_customer.example.class: TeamERP\CustomerBundle\Example
+
+# services:
+#    team_erp_customer.example:
+#        class: %team_erp_customer.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]
+services:
+#    teamerp_customer.entity.customer:
+#        class: TeamERP\CustomerBundle\Entity\Customer
+#        tags:
+#            - { name: customer.entity, alias: customer }    
+    teamerp_customer.form.type.customer:
+        class: TeamERP\CustomerBundle\Form\Type\CustomerType
+        tags:
+            - { name: form.type, alias: customer } 
+    teamerp_customer.type.issue_selector:
+        class: TeamERP\CustomerBundle\Form\Type\CompanySelectorType
+        arguments: ["@doctrine.orm.entity_manager"]
+        tags:
+        - { name: form.type, alias: company_selector }     
+    
+    teamerp.menu_builder:
+        class: TeamERP\CustomerBundle\Menu\BuilderLetfSideBar
+        arguments: ["@knp_menu.factory", "@security.context"]  
+        
+    teamerp.menu.leftsidebar:
+        class: Knp\Menu\MenuItem
+        factory_service: teamerp.menu_builder
+        factory_method: leftSideBar
+        arguments: ["@request"]
+        scope: request 
+        tags:
+            - { name: knp_menu.menu, alias: side_left }
+        

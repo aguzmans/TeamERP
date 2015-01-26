@@ -1,0 +1,18 @@
+/* 
+    Created on : 06/28/2014, 05:40:06 AM
+    Author     : Abel Guzman
+*/
+
+#header, #right-sidebar {
+    margin-top: 1em; 
+}
+.panel-body {
+    padding: 0px;
+}
+.badge {
+    background: #ffffff;
+}
+.search-empty {
+    display: block;
+    text-align: left;
+}
