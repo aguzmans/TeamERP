@@ -5,6 +5,7 @@
 
 #header, #right-sidebar {
     margin-top: 1em; 
+    padding-bottom: 1em;
 }
 .panel-body {
     padding: 0px;

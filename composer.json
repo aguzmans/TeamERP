@@ -19,13 +19,14 @@
         "sensio/framework-extra-bundle": "~3.0",
         "sensio/generator-bundle": "~2.3",
         "incenteev/composer-parameter-handler": "~2.0",
-        "friendsofsymfony/user-bundle": "1.3.4",
+        "friendsofsymfony/user-bundle": "*",
         "sylius/resource-bundle": "*",
         "friendsofsymfony/jsrouting-bundle": "*",
         "genemu/form-bundle": "2.2.*",
         "knplabs/knp-menu-bundle": "*",
         "white-october/pagerfanta-bundle": "*",
-        "sylius/flow-bundle": "*"
+        "sylius/flow-bundle": "*",
+        "ee/dataexporter-bundle": "*"
     },
     "scripts": {
         "post-install-cmd": [

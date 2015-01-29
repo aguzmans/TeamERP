@@ -15,10 +15,12 @@
 </div>      
 {{ form_end(form) }}
 {% if result[0].customername is defined %}
+    {% if searchTerm is not defined or searchTerm == ""%} {% set searchTerm = 'a' %} {% endif %}
+    <a href="{{ path('team_erp_customer_export_csv', {'object': searchTerm }) }}" class="btn-info">CSV</a>
 <table class="table table-striped">
     <thead>
         <tr>
-            <th>Action</th>
+            <th>Actions</th>
             <th>Company</th>
             <th>Name</th>
             <th class="hidden-md hidden-sm hidden-xs">Physical Address</th>

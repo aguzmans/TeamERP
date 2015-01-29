@@ -37,14 +37,7 @@ class CustomerController extends Controller {
         $result = '';
         $customerInfo = '';
         $pagerfanta = '';
-        /* TERMINAR
-         * Generate Route for when a new search is done
-         */
-//        if ($request->getMethod() == 'POST'){
-//            $a = $this->get('router')->generate('team_erp_customer_index', array('page' => 1));
-//            var_dump($a);
-//            die;
-//        }
+
         //if the form is sent by post search in the DB
         if ($request->getMethod() == 'POST' || $page > 0) {
             //get the customer information from the form
