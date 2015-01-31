@@ -14,3 +14,8 @@ nbproject
 .tm_properties
 TextMate2
 sh.exe.stackdump
+assets.sh
+gitpush.sh
+.gitignore
+composer.lock
+composer.phar

@@ -74,19 +74,23 @@ If you get any warnings or recommendations, fix them before moving on.
 All libraries and bundles included in the Symfony and TeamERP Standard Edition are
 released under the MIT, BSD or GPL equivalent license.
 
-Enjoy!
+Road Map:
+Social media integration and Social media management:
 
-[1]:  http://symfony.com/doc/2.4/book/installation.html
-[2]:  http://getcomposer.org/
-[3]:  http://symfony.com/download
-[4]:  http://symfony.com/doc/2.4/quick_tour/the_big_picture.html
-[5]:  http://symfony.com/doc/2.4/index.html
-[6]:  http://symfony.com/doc/2.4/bundles/SensioFrameworkExtraBundle/index.html
-[7]:  http://symfony.com/doc/2.4/book/doctrine.html
-[8]:  http://symfony.com/doc/2.4/book/templating.html
-[9]:  http://symfony.com/doc/2.4/book/security.html
-[10]: http://symfony.com/doc/2.4/cookbook/email.html
-[11]: http://symfony.com/doc/2.4/cookbook/logging/monolog.html
-[12]: http://symfony.com/doc/2.4/cookbook/assetic/asset_management.html
-[13]: http://symfony.com/doc/2.4/bundles/SensioGeneratorBundle/index.html
-[14]: https://github.com/aguzmans/TeamERP
+If you want to build strong relationships with your customers,
+ you need to be where they are.  If they are active on social media,
+ you need to be there too.  Social media can be very time consuming, 
+so you need the right tools to help you manage your interactions and 
+different platforms.
+
+Text messaging (SMS)
+
+Getting agreement to use text to contact your customers is very powerful.  
+You know that texts will get read.  Follow best practice and your customers 
+will love it as much as you.
+
+Calendar and tasks (and integration with google calender or/and microsoft platform):
+
+Whether you are a lone marketer, or a team who need to share, 
+the InTouch calendar and tasks function will keep you organised 
+and help you get more done.
