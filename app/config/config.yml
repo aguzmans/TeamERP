@@ -85,8 +85,18 @@ fos_user:
     user_class: TeamERP\UserBundle\Entity\User
     registration:
         form:
-            type: teamerp_user_registration    
-
+            type: teamerp_user_registration 
+    profile:
+        form:
+            type: teamerp_user_profile_edit
+    service:
+        mailer: fos_user.mailer.twig_swift            
+    resetting:
+        email:
+            from_email:
+                address:        noreplay@abelworld.com
+                sender_name:    TeamERP Resetting Password from AbelWorld
+                
 sylius_resource:
     resources:
         teamerp.job:

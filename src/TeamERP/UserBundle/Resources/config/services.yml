@@ -9,3 +9,8 @@ services:
         class: TeamERP\UserBundle\Form\Type\RegistrationFormType
         tags:
             - { name: form.type, alias: teamerp_user_registration }
+            
+    teamerp_user.profile_edit.form.type:
+        class: TeamERP\UserBundle\Form\Type\ProfileFormType
+        tags:
+            - { name: form.type, alias: teamerp_user_profile_edit }            

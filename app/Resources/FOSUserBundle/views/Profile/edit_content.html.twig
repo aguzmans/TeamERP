@@ -1,0 +1,45 @@
+{% block contentTitle %}
+    <div><h3>Edit user information</h3></div>
+{% endblock %}
+<form action="{{ path('fos_user_profile_edit') }}" {{ form_enctype(form) }} method="POST" class="form-horizontal">
+<input id="fos_user_profile_form__token" type="hidden" value="{{csrf_token('profile')}}" name="fos_user_profile_form[_token]">
+    {{ form_errors(form) }}
+    <div class="form-group">
+        <label class="col-lg-2 control-label">Username:</label>
+        <div class="col-sm-10">
+            {{ form_widget(form.username, {'attr': {'class': 'form-control list-unstyled', 'placeholder': 'Enter username', 'required': 'required'}}) }}
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-lg-2 control-label">E-mail:</label>
+        <div class="col-sm-10">
+                    <div class="input-group">
+                        <div class="input-group-addon">@</div>{{ form_widget(form.email, {'attr': {'class': 'form-control list-unstyled', 'placeholder': 'Enter e-mail', 'required': 'required'}}) }}
+                    </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-lg-2 control-label">Organization Name:</label>
+        <div class="col-sm-10">
+            {{ form_widget(form.OrganizationName, {'attr': {'class': 'form-control list-unstyled', 'placeholder': 'Enter Company or Organization name', 'required': 'required'}}) }}        
+        </div>
+    </div>  
+    <div class="form-group">
+        <label class="col-lg-2 control-label">Administrator Full Name:</label>
+        <div class="col-sm-10">
+            {{ form_widget(form.name, {'attr': {'class': 'form-control list-unstyled', 'placeholder': 'Administrator full name'}}) }}        
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-lg-2 control-label">Current password:</label>
+        <div class="col-sm-10">
+            {{ form_widget(form.current_password, {'attr': {'class': 'form-control list-unstyled', 'placeholder': 'Validate operation with your password', 'required': 'required'}}) }}
+        </div>
+    </div>         
+  <div class="form-group">        
+    <div class="col-sm-offset-2 col-sm-10">
+        <input class="btn btn-primary" type="submit" value="{{ 'profile.edit.submit'|trans({}, 'FOSUserBundle') }}" />
+        <input class="btn btn-default" type="reset" value="Cancel" />
+    </div>
+  </div>
+</form>

@@ -1,0 +1,10 @@
+<div class="fos_user_user_show">
+    <p><label class="col-lg-2 control-label">{{ 'profile.show.username'|trans({}, 'FOSUserBundle') }}:</label> {{ user.username }}</p>
+    <p><label class="col-lg-2 control-label">{{ 'profile.show.email'|trans({}, 'FOSUserBundle') }}:</label> {{ user.email }}</p>
+    <p><label class="col-lg-2 control-label">Name{#{ 'profile.show.name'|trans({}, 'FOSUserBundle') }#}:</label> {{ user.name }}</p>    
+    <p><label class="col-lg-2 control-label">Organization/Company{#{ 'profile.show.OrganizationName'|trans({}, 'FOSUserBundle') }#}:</label> {{ user.OrganizationName }}</p>
+    <div class="col-sm-offset-2 col-sm-10">
+        <a class="warning" href="{{path('fos_user_profile_edit')}}">Edit Profile</a> | 
+        <a class="warning" href="{{path('fos_user_change_password')}}">Password change</a>
+    </div>
+</div>
