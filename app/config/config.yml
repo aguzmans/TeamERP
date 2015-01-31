@@ -83,6 +83,9 @@ fos_user:
     db_driver: orm 
     firewall_name: main
     user_class: TeamERP\UserBundle\Entity\User
+    registration:
+        form:
+            type: teamerp_user_registration    
 
 sylius_resource:
     resources:
