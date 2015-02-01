@@ -21,7 +21,6 @@ class CustomerRepository extends EntityRepository
             $q->orWhere(sprintf("c.fax like '%s'", '%'.$criteria.'%'));
             $q->orWhere(sprintf("c.cell_phone like '%s'", '%'.$criteria.'%'));
             $q->orWhere(sprintf("o.company_name like '%s'", '%'.$criteria.'%'));
-                $q->groupBy(c.company);
         }
         return $q->getQuery()->getResult();
     }
