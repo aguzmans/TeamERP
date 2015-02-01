@@ -20,6 +20,10 @@ fos_user_register:
 teamerp_user_main:
     path: /admin
     defaults: { _controller: TeamERPUserBundle:Admin:admin }
+
+teamerp_user_new_user:
+    path: /admin/new
+    defaults: { _controller: TeamERPUserBundle:Admin:newUser }    
     
 
     

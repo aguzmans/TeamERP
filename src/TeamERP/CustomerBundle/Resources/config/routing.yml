@@ -18,7 +18,7 @@ team_erp_customer_delete:
     
     
 team_erp_customer_export_csv:
-    pattern:  /csv/{object}
+    pattern:  /csv
     defaults: { _controller: TeamERPCustomerBundle:CSV:export }
     
 

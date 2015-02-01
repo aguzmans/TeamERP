@@ -20,10 +20,7 @@ class BuilderSalesLetfSideBar extends Builder {
                     'routeParameters' => array('page' => 1),
                             'labelAttributes' => array('icon' => 'fa fa-user')))
                         ->addChild('New', array('route' => 'team_erp_customer_new'));
-//                $menu->addChild('Enquiry', array('route' => 'team_erp_sales_homepage',
-////                    'routeParameters' => array('page' => 1),
-//                            'labelAttributes' => array('icon' => 'fa fa-money')))
-//                        ->addChild('New', array('route' => 'team_erp_sales_enquiry_new'));                
+                $menu['Customer']->addChild('Export to CSV', array('route' => 'team_erp_customer_export_csv'));                
             }
         }
         return $menu;

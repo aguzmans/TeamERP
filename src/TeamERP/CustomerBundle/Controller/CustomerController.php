@@ -20,6 +20,12 @@ class CustomerController extends Controller {
         //create form using the service called customer
         $form = $this->createForm('customer', $customer);
         /* Persis Customer */
+//        var_dump($customer);
+//        die;
+//        //persist customer and company
+//        if ($customer->getCompany() == ''){
+//            $customer->setCompany() = 'No Company';
+//        }
         $statusMessage = $this->persisCustomerAndCompany($request, $customer, $form);
         /* Send infor to the client */
         return $this->render('TeamERPCustomerBundle:Customer:new.html.twig', 
@@ -127,10 +133,9 @@ class CustomerController extends Controller {
         $form->handleRequest($request);
         $statusMessage = "";
         //if ($form->isValid())            echo 'Is Valid';
-
+        
         if ($form->isValid() && $request->getMethod() == 'POST') {
             try {
-                //persist customer and company
                 $em = $this->getDoctrine()->getManager();
                 $em->persist($customer);
                 $em->flush();

@@ -18,7 +18,7 @@ class CustomerType  extends AbstractType
         $builder
             ->add("customer_name", "text", array('label'=>'Customer name', 'required' => true,
             'attr' => array('class' => 'form-control')))
-            ->add('company', 'company_selector')
+            ->add('company', 'company_selector', array('required' => false))
             ->add("address", "text", array('label'=>'Physical address', 'required' => false))
             ->add("postal_address", "text", array('label'=>'Postal address', 'required' => false))
             ->add("city_town_village", "text", array('label'=>'City, town or village', 'required' => false))

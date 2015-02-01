@@ -28,7 +28,9 @@ class CompanyToTextTransformer implements DataTransformerInterface {
     public function reverseTransform($text)
     {
         if (!$text) {
-            return null;
+            $company  = $this->om->getRepository('TeamERPCustomerBundle:Company')
+                ->find(-1);
+            return $company;
         }
         $company = $this->om->getRepository('TeamERPCustomerBundle:Company')
                 ->findOneBy(array('company_name' => $text));

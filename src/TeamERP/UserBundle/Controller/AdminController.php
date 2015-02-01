@@ -15,4 +15,8 @@ class AdminController extends Controller
     {
         return $this->render('TeamERPUserBundle:Admin:admin.html.twig');
     }
+    public function newUserAction()
+    {
+        return $this->render('TeamERPUserBundle:Admin:new_user.html.twig');
+    }    
 }

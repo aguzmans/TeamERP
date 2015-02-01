@@ -15,8 +15,7 @@
 </div>      
 {{ form_end(form) }}
 {% if result[0].customername is defined %}
-    {% if searchTerm is not defined or searchTerm == ""%} {% set searchTerm = 'a' %} {% endif %}
-    <a href="{{ path('team_erp_customer_export_csv', {'object': searchTerm }) }}" class="btn-info">CSV</a>
+    {% if searchTerm is not defined or searchTerm == ""%} {% set searchTerm = '-1NoCriterie' %} {% endif %}
 <table class="table table-striped">
     <thead>
         <tr>
@@ -40,7 +39,7 @@
                 <a class="danger" href="{{path('team_erp_customer_delete'
 , {'id' : customer.id })}}">
                     <i class="fa fa-trash-o"></i> </a></td>
-            <td>{{customer.company.companyname}}</td>
+                    <td>{% if customer.company.companyname != 'No Company' %}{{customer.company.companyname}}{% endif %}</td>
             <td>{{customer.customername}}</td>
             <td class="hidden-md hidden-sm hidden-xs">{{customer.address}}</td>
             <td class="hidden-md hidden-sm hidden-xs">{{customer.postaladdress}}</td>
