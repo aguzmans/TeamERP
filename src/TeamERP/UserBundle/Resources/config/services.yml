@@ -13,4 +13,17 @@ services:
     teamerp_user.profile_edit.form.type:
         class: TeamERP\UserBundle\Form\Type\ProfileFormType
         tags:
-            - { name: form.type, alias: teamerp_user_profile_edit }            
+            - { name: form.type, alias: teamerp_user_profile_edit }       
+            
+    teamerp.menu_builder_admin:
+        class: TeamERP\UserBundle\Menu\BuilderAdminLetfSideBar
+        arguments: ["@knp_menu.factory", "@security.context"]  
+        
+    teamerp_user.menu.adminleftsidebar:
+        class: Knp\Menu\MenuItem
+        factory_service: teamerp.menu_builder_admin
+        factory_method: adminLeftSideBar
+        arguments: ["@request"]
+        scope: request 
+        tags:
+            - { name: knp_menu.menu, alias: admin_side_left }           

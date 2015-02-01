@@ -1,5 +1,4 @@
 <?php
-
 namespace TeamERP\CustomerBundle\Menu;
 
 /**
@@ -10,14 +9,14 @@ namespace TeamERP\CustomerBundle\Menu;
 use TeamERP\BaseBundle\Menu\Builder;
 use Symfony\Component\HttpFoundation\Request;
 
-class BuilderLetfSideBar extends Builder {
+class BuilderSalesLetfSideBar extends Builder {
 
-    public function leftSideBar(Request $request) {
+    public function salesLeftSideBar(Request $request) {
         $menu = $this->factory->createItem('root');
         $menu->setChildrenAttributes(array('class' => 'nav'));
         if ($this->isLoggedIn == true) {
-            if ($this->securityContext->isGranted('ROLE_USER_SALES')) {
-                $menu->addChild('Customers', array('route' => 'team_erp_customer_index',
+            if ($this->securityContext->isGranted('ROLE_SALES')) {
+                $menu->addChild('Customer', array('route' => 'team_erp_customer_index',
                     'routeParameters' => array('page' => 1),
                             'labelAttributes' => array('icon' => 'fa fa-user')))
                         ->addChild('New', array('route' => 'team_erp_customer_new'));

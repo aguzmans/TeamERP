@@ -22,10 +22,11 @@ security:
         - { path: ^/register, role: IS_AUTHENTICATED_ANONYMOUSLY }   
         - { path: ^/resetting, role: IS_AUTHENTICATED_ANONYMOUSLY }        
         - { path: ^/profile, role: ROLE_USER }
-        - { path: ^/profile/edit, role: ROLE_ADMIN }
+        - { path: ^/profile/edit, role: ROLE_USER}
         # Sales module
-        - { path: ^/customer, role: ROLE_USER_SALES }        
-        - { path: ^/sales, role: ROLE_USER_SALES } 
+        - { path: ^/customer, role: ROLE_SALES }        
+        - { path: ^/sales, role: ROLE_SALES }
+        - { path: ^/admin, role: ROLE_COMPANY_ADMIN }
 #        - { path: ^/transport/fuel, role: ROLE_USER_TRANSPORT }        
 #        - { path: ^/transport, role: ROLE_USER_TRANSPORT }
 #        - { path: ^/$, role: IS_AUTHENTICATED_ANONYMOUSLY}        
@@ -33,7 +34,7 @@ security:
 
         
     role_hierarchy:
-        ROLE_USER_SALES:  ROLE_USER_SALES
-        ROLE_USER:        ROLE_USER
-        ROLE_ADMIN:       ROLE_USER
-        ROLE_SUPER_ADMIN: ROLE_ADMIN
+        
+        ROLE_USER:                [ROLE_VIEWER,ROLE_SALES,ROLE_ACOUNTS]
+        ROLE_COMPANY_ADMIN:       ROLE_USER
+        ROLE_SUPER_ADMIN:         ROLE_COMPANY_ADMIN

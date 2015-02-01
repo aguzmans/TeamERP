@@ -30,11 +30,16 @@ class Builder extends ContainerAware {
         $menu->addChild('Home', array('route' => 'team_erp_base_homepage',
             'labelAttributes' => array('icon' => 'fa fa-home')));
         if ($this->isLoggedIn == true) {
-            if ($this->securityContext->isGranted("ROLE_USER_SALES")) {
+            if ($this->securityContext->isGranted("ROLE_SALES")) {
                 $menu->addChild('Sales', array('route' => 'team_erp_customer_index',
                     'routeParameters' => array('page' => 1),
                     'labelAttributes' => array('icon' => 'fa fa-money')));
             }
+        if ($this->securityContext->isGranted("ROLE_COMPANY_ADMIN")) {
+            $menu->addChild('Admin', array('route' => 'teamerp_user_main',
+//                    'routeParameters' => array('page' => 1),
+                'labelAttributes' => array('icon' => 'fa fa-wheelchair')));
+        }            
         }
         return $menu;
     }

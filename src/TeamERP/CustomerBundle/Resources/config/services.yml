@@ -21,15 +21,15 @@ services:
         - { name: form.type, alias: company_selector }     
     
     teamerp.menu_builder:
-        class: TeamERP\CustomerBundle\Menu\BuilderLetfSideBar
+        class: TeamERP\CustomerBundle\Menu\BuilderSalesLetfSideBar
         arguments: ["@knp_menu.factory", "@security.context"]  
         
-    teamerp.menu.leftsidebar:
+    teamerp_sales.menu.salesleftsidebar:
         class: Knp\Menu\MenuItem
         factory_service: teamerp.menu_builder
-        factory_method: leftSideBar
+        factory_method: SalesleftSideBar
         arguments: ["@request"]
         scope: request 
         tags:
-            - { name: knp_menu.menu, alias: side_left }
+            - { name: knp_menu.menu, alias: sales_side_left }
         
