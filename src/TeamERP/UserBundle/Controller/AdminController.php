@@ -13,10 +13,8 @@ class AdminController extends Controller
 {
     public function adminAction()
     {
-        return $this->render('TeamERPUserBundle:Admin:admin.html.twig');
-    }
-    public function newUserAction()
-    {
-        return $this->render('TeamERPUserBundle:Admin:new_user.html.twig');
-    }    
+        $userManager = $this->get('fos_user.user_manager');
+        $users = $userManager->findUsers();
+        return $this->render('TeamERPUserBundle:Admin:admin.html.twig',array('users' =>$users));
+    }   
 }

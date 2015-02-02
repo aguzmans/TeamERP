@@ -11,7 +11,16 @@ class RegistrationFormType extends AbstractType
     {
         // add your custom field
         $builder->add('name')
-                ->add('OrganizationName');
+                ->add('OrganizationName')
+                ->add('roles', 'choice', array(
+                    'choices'   => array(
+                        'ROLE_SALES'   => 'Sales',
+                        'ROLE_ACOUNTS'   => 'Accounts',
+                        'ROLE_USER'   => 'General user',
+                        'ROLE_COMPANY_ADMIN' => 'Administrator',
+                    ),
+                    'multiple'  => true,
+                    ));
     }
 
     public function getParent()

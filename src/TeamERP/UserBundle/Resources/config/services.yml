@@ -7,6 +7,7 @@ services:
 #        arguments: [@service_id, "plain_value", %parameter%]
     teamerp_user.registration.form.type:
         class: TeamERP\UserBundle\Form\Type\RegistrationFormType
+        arguments: [%fos_user.model.user.class%, %security.role_hierarchy.roles%]        
         tags:
             - { name: form.type, alias: teamerp_user_registration }
             

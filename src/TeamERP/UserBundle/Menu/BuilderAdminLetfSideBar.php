@@ -20,7 +20,7 @@ class BuilderAdminLetfSideBar extends Builder {
                 $menu->addChild('Users', array('route' => 'teamerp_user_main',
 //                    'routeParameters' => array('page' => 1),
                             'labelAttributes' => array('icon' => 'fa fa-user')))
-                        ->addChild('New', array('route' => 'teamerp_user_new_user'));
+                        ->addChild('New', array('route' => 'fos_user_registration_register'));
 //                $menu->addChild('Enquiry', array('route' => 'team_erp_sales_homepage',
 ////                    'routeParameters' => array('page' => 1),
 //                            'labelAttributes' => array('icon' => 'fa fa-money')))

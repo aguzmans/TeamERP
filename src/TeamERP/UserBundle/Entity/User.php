@@ -43,7 +43,7 @@ class User extends BaseUser
      * )
      */
     protected $OrganizationName;
-    
+  
     public function __construct()
     {
         parent::__construct();
