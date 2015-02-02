@@ -12,9 +12,9 @@
         
         {% for user in users %}
             <tr>
-                <td><a class="warning" href="{{path('team_erp_customer_edit', {'id' : user.id })}}">
+                <td><a class="warning" href="{{path('teamerp_user_edit_other', {'id' : user.username })}}">
                         <i class="fa fa-pencil-square-o"></i></a> | 
-                    <a class="danger" href="{{path('team_erp_customer_delete', {'id' : user.id })}}">
+                    <a class="danger" href="{{path('teamerp_user_delete_other', {'aUser' : user.username })}}">
                         <i class="fa fa-trash-o"></i> </a>
                 </td>
                 <td>{{user.username}}</td>

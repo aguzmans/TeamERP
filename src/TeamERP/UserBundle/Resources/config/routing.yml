@@ -18,13 +18,20 @@ fos_user_register:
     prefix: /register
 
 teamerp_user_main:
-    path: /admin
+    path: /admin/
     defaults: { _controller: TeamERPUserBundle:Admin:admin }
 
 teamerp_user_new_user:
     path: /admin/new
-    defaults: { _controller: TeamERPUserBundle:Admin:newUser }    
-    
+    defaults: { _controller: TeamERPUserBundle:Admin:newUser }  
+
+teamerp_user_edit_other:    
+    path: /profile/edit/{id}/
+    defaults: { _controller: TeamERPUserBundle:Admin:editUser }    
+
+teamerp_user_delete_other:    
+    path: /profile/delete/{aUser}/
+    defaults: { _controller: TeamERPUserBundle:Admin:deleteUser }    
 
     
   
