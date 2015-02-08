@@ -28,6 +28,7 @@
             <th class="hidden-xs">E-mail</th>
             <th class="hidden-xs">Phones</th>
             <th class="hidden-xs">Fax</th>
+            <th class="hidden-xs">Type</th>
         </tr>
     </thead>
     <tbody>
@@ -50,7 +51,14 @@
                 <span class="hidden-md">,{{customer.cellphone}}</span> 
                     {% endif %}
             </td>
-            <td class="hidden-xs">{{customer.fax}}</td>                                
+            <td class="hidden-xs">{{customer.fax}}</td> 
+            {% if customer.typeContact == 0 %}
+            <td class="hidden-xs">Company</td> 
+            {% elseif customer.typeContact == 1 %}
+                <td class="hidden-xs">Individual</td> 
+            {% elseif customer.typeContact == 2 %}
+                <td class="hidden-xs">Emplyee</td>
+            {% endif %}
         </tr>
         {% endfor %}
     </tbody>

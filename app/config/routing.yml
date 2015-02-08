@@ -1,3 +1,7 @@
+team_erphhrr:
+    resource: "@TeamERPHHRRBundle/Resources/config/routing.yml"
+    prefix:   /
+
 team_erp_sales:
     resource: "@TeamERPSalesBundle/Resources/config/routing.yml"
     prefix:   /sales

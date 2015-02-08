@@ -26,7 +26,8 @@
         "knplabs/knp-menu-bundle": "*",
         "white-october/pagerfanta-bundle": "*",
         "sylius/flow-bundle": "*",
-        "ee/dataexporter-bundle": "*"
+        "ee/dataexporter-bundle": "*",
+        "fontawesome/fontawesome": "*"
     },
     "scripts": {
         "post-install-cmd": [

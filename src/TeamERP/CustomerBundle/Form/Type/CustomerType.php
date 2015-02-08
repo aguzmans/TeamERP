@@ -16,8 +16,13 @@ class CustomerType  extends AbstractType
     {
         /* Build form */
         $builder
-            ->add("customer_name", "text", array('label'=>'Customer name', 'required' => true,
+            ->add("customer_name", "text", array('label'=>'Customer name', 'required' => false,
             'attr' => array('class' => 'form-control')))
+            ->add('typeContact','choice',array('label'=>'Type of contact',
+                'multiple'=>false,
+                'choices'=>array(0=>'Company', 1=>'Individual', 2=>'Employee'),
+                'attr'=>array('style'=>'width:300px', 'customattr'=>'customdata')
+                ))
             ->add('company', 'company_selector', array('required' => false))
             ->add("address", "text", array('label'=>'Physical address', 'required' => false))
             ->add("postal_address", "text", array('label'=>'Postal address', 'required' => false))

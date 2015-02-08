@@ -32,6 +32,7 @@ class AppKernel extends Kernel
             new TeamERP\CustomerBundle\TeamERPCustomerBundle(),
             new TeamERP\SalesBundle\TeamERPSalesBundle(),
             new EE\DataExporterBundle\EEDataExporterBundle(),
+            new TeamERP\HHRRBundle\TeamERPHHRRBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

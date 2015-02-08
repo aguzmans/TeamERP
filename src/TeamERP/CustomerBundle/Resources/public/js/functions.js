@@ -5,10 +5,11 @@
 
 $(document).ready(function(){    
     $('#CompanyName').show();    
-    $('#NotACompany').change(function() {
+    $('#customer_typeContact').change(function() {
         var $this = $(this);
-        // $this will contain a reference to the checkbox   
-        if ($this.is(':checked')) {
+        // $this will contain a reference to the checkbox 
+        //alert($('#customer_typeContact option:selected').text());
+        if ($('#customer_typeContact option:selected').text() !== 'Company') {
             $('#CompanyName').hide();
             $('#customer_company').val('');
         } else {

@@ -25,6 +25,11 @@ class Customer
     private $address;
 
     /**
+     * @ORM\Column(type="integer", nullable=true)
+     */
+    private $typeContact;
+    
+    /**
      * @ORM\Column(type="string", length=250, nullable=true)
      */
     private $postal_address;
@@ -276,4 +281,14 @@ class Customer
     {
         return $this->company;
     }
+//    public function __construct($aCustomerType) {
+//        $this->type_contact=$aCustomerType;
+//    }
+    public function getTypeContact(){
+        return $this->typeContact;
+    }
+    public function setTypeContact($aContactType){
+        $this->typeContact = $aContactType;
+    }
+    
 }

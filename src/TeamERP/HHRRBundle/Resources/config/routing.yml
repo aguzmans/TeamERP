@@ -1,0 +1,3 @@
+team_erphhrr_homepage:
+    path:     /hello/{name}
+    defaults: { _controller: TeamERPHHRRBundle:Default:index }
