@@ -6,6 +6,7 @@
             <th>Actions</th>
             <th>Username</th>
             <th>Roles</th>
+            <th>Company</th>
         </tr>
     </thead>
     <tbody>
@@ -22,6 +23,7 @@
                     {% for efrole in efectiveRoles %}
                             {{efrole}},
                     {% endfor %}</td>
+                <td>{{user.OrganizationName}}</td>
             </tr> 
         {% endfor %}
     </tbody>

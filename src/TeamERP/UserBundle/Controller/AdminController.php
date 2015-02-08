@@ -4,6 +4,7 @@ namespace TeamERP\UserBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\Security\Core\User\UserInterface;
+use TeamERP\UserBundle\Form\Type;
 
 /**
  * Description of AdminController
@@ -22,7 +23,8 @@ class AdminController extends Controller
 
         $userManager = $this->get('fos_user.user_manager');
         $user = $userManager->findUserByUsername($id);
-
+        
+        //$form = new NewUserFormType();
         $form = $this->container->get('fos_user.profile.form');
         $formHandler = $this->container->get('fos_user.profile.form.handler');
 

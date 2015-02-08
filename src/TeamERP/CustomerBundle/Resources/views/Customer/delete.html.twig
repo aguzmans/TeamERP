@@ -2,15 +2,15 @@
 {% block content %}
     {% if status == 'Deleted' %}
         <div class="success">
-            <p>The customer has been successfully deleted you can: </p>
+            <p>The contact has been successfully deleted you can: </p>
             <p>Go back to general <a href="{{path('team_erp_base_homepage')}}"> <i class="fa fa-home"></i> Home</a></p>
-            <p>Go back to sales <a href="{{path('team_erp_customer_index')}}"><i class="fa fa-user"></i> Customer search</a></p>
+            <p>Go back to sales <a href="{{path('team_erp_customer_index')}}"><i class="fa fa-user"></i> Contact search</a></p>
         </div>
     {% else %}
         <div class="warning">
             <p>There was a problem to delete this customer with error: {{status}} </p>
             <p>Go back to general <a href="{{path('team_erp_base_homepage')}}"><i class="fa fa-home"></i> Home</a></p>
-            <p>Go back to sales <a href="{{path('team_erp_customer_index')}}"><i class="fa fa-user"></i> Customer search</a></p>
+            <p>Go back to sales <a href="{{path('team_erp_customer_index')}}"><i class="fa fa-user"></i> Contact search</a></p>
         </div>
     {% endif %}
 {% endblock %}
