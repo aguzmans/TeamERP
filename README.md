@@ -1,6 +1,8 @@
 Team Enterprise Resource Management (TeamERP) 
 ========================
-
+Demo of what is currently being developed: http://erp.abelworld.com
+user: abel
+pass: abel
 Welcome to the TeamERP - the aim of this project is to create a fully-functional Symfony2
 application for Enterprise management. For now I have done only the customer care bundle,
 but very soon I'll continue adding more and more functionality and other modules.

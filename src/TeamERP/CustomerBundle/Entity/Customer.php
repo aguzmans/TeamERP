@@ -4,6 +4,7 @@ use Doctrine\ORM\Mapping AS ORM;
 
 /**
  * @ORM\Entity(repositoryClass="TeamERP\CustomerBundle\Entity\CustomerRepository")
+ * @ORM\Table(name="customer")
  */
 class Customer
 {
