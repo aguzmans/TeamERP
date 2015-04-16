@@ -15,7 +15,12 @@ class SearchCustomerType  extends AbstractType
     {
         /* Build form */
         $builder
-            ->add("customer_info", "text")
+            ->add("customer_info", "text",array('label'=>'Criteria'))
+            ->add('typeContact','choice',array('label'=>'Type of contact',
+                'multiple'=>false,
+                'choices'=>array(0=>'Company', 1=>'Individual', 2=>'Employee'),
+                'attr'=>array('style'=>'width:300px', 'customattr'=>'customdata')
+                ))
             ->add("search", "submit", array('label' => 'Search Customer',
             'attr' => array('class' => 'btn btn-default'))); 
     }
