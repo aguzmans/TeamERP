@@ -29,14 +29,16 @@
                     {% endblock %}
                     </div>
                     <div id="central-content-area" class="col-lg-10 col-md-10 col-sm-12 col-xs-12">
-                    {% block contentTitle %}
-                    {% endblock %}
-                    {% block content %}
-                        <div class="bar-status">
-                            {% block status %}          
-                            {% endblock %}
-                        </div> 
-                    {% endblock %}
+                        {% block contentTitle %}
+                        {% endblock %}
+                        <div class="main-content">
+                        {% block content %}
+                            <div class="bar-status">
+                                {% block status %}          
+                                {% endblock %}
+                            </div> 
+                        {% endblock %}
+                        </div>
                     </div>                
                     <!--<div class="col-lg-2 col-md-2">-->
                     <!-- Right side bars -->                         
