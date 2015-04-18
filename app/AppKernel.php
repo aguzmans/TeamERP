@@ -20,7 +20,7 @@ class AppKernel extends Kernel
             new FOS\UserBundle\FOSUserBundle(),
             new FOS\RestBundle\FOSRestBundle(),            
             new JMS\SerializerBundle\JMSSerializerBundle($this),
-            new Genemu\Bundle\FormBundle\GenemuFormBundle(),
+//            new Genemu\Bundle\FormBundle\GenemuFormBundle(),
             new Sylius\Bundle\ResourceBundle\SyliusResourceBundle(),
             new Sylius\Bundle\FlowBundle\SyliusFlowBundle(),
             new WhiteOctober\PagerfantaBundle\WhiteOctoberPagerfantaBundle(),

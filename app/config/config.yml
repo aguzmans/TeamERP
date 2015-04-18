@@ -105,8 +105,8 @@ sylius_resource:
             classes:
                 model: TeamERP\TransportBundle\Entity\Job
 
-genemu_form:
-    autocomplete: ~
+#genemu_form:
+#    autocomplete: ~
     
 # app/config/config.yml
 knp_menu:

@@ -1,3 +1,20 @@
-team_erp_stores_homepage:
-    pattern:  /hello/{name}
-    defaults: { _controller: TeamERPStoresBundle:Default:index }
+#main page
+team_erp_stores_dashboard:
+    pattern:  /dashboard
+    defaults: { _controller: TeamERPStoresBundle:Product:dashboard }
+#Create new product
+team_erp_stores_new_product:
+    pattern:  /new/product
+    defaults: { _controller: TeamERPStoresBundle:Product:new }
+#create new category    
+team_erp_stores_new_category:
+    pattern:  /new/category
+    defaults: { _controller: TeamERPStoresBundle:Category:new }    
+#Receive products
+team_erp_stores_invoice:
+    pattern:  /new/invoice
+    defaults: { _controller: TeamERPStoresBundle:Invoice:new }    
+#issue job orders
+team_erp_stores_issue_order:
+    pattern:  /new/issue
+    defaults: { _controller: TeamERPStoresBundle:Issue:new }    

@@ -20,14 +20,12 @@
         "sensio/generator-bundle": "~2.3",
         "incenteev/composer-parameter-handler": "~2.0",
         "friendsofsymfony/user-bundle": "*",
-        "sylius/resource-bundle": "*",
+        "sylius/resource-bundle": "0.12.*",
         "friendsofsymfony/jsrouting-bundle": "*",
-        "genemu/form-bundle": "2.2.*",
         "knplabs/knp-menu-bundle": "*",
         "white-october/pagerfanta-bundle": "*",
         "sylius/flow-bundle": "*",
-        "ee/dataexporter-bundle": "*",
-        "fontawesome/fontawesome": "*"
+        "ee/dataexporter-bundle": "*"
     },
     "scripts": {
         "post-install-cmd": [

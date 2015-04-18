@@ -5,3 +5,15 @@ services:
 #    team_erp_stores.example:
 #        class: %team_erp_stores.example.class%
 #        arguments: [@service_id, "plain_value", %parameter%]
+    teamerp.menu_builder_stores:
+        class: TeamERP\StoresBundle\Menu\BuilderLeftSideBarStores
+        arguments: ["@knp_menu.factory", "@security.context"]
+        
+    teamerp.menu.leftsidebarstores:
+        class: Knp\Menu\MenuItem
+        factory_service: teamerp.menu_builder_stores
+        factory_method: leftSideBarStores
+        arguments: ["@request"]
+        scope: request 
+        tags:
+            - { name: knp_menu.menu, alias: side_left_stores }
