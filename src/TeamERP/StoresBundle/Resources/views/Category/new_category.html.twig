@@ -1,32 +1,45 @@
 {% extends "TeamERPStoresBundle::layout.html.twig"%}
 {% block content %}
-    <div class="form-header"><h1>New Category</h1></div>     
+    <div class="form-header"><h1>New category</h1></div>     
     <div class="form">
         <form class="form-horizontal">
-            <div class="form-group">
-                <label class="col-sm-2 control-label">Category name</label>
-                <div class="col-sm-10">
-                    <input type="text" class="form-control" placeholder="e.g. cables or doors"/>
-                </div>
-            </div>
-            <div class="form-group">
-                <label class="col-sm-2 control-label">Description</label>
-                <div class="col-sm-10">
-                    <input type="text" class="form-control" placeholder="Long description"/>
-                </div>
-            </div>
-            <div class="form-group">
-                <label class="col-sm-2 control-label">Category code</label>
-                <div class="col-sm-10">
-                    <input type="text" class="form-control" placeholder="Code for this category"/>
-                </div>
-            </div>
-            <div class="form-group">
-                <div class="col-sm-offset-2 col-sm-10">
-                    <input type="submit" class="btn btn-primary" value="Save"/>
-                    <input type="reset" class="btn btn-default" value="Cancel"/>
-                </div> 
-            </div>            
+            {% include 'TeamERPStoresBundle:Category:category_form.html.twig' %}
         </form>
+    </div>
+    <div>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Actions</th>
+                    <th>Category Name</th>
+                    <th>Description</th>
+                    <th class="hidden-md hidden-sm hidden-xs">Code</th>
+                    <th class="hidden-md hidden-sm hidden-xs">Products</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Edit | delete</td>
+                    <td>Cables</td>
+                    <td>All cables</td>
+                    <td class="hidden-md hidden-sm hidden-xs">A:B:C</td>
+                    <td class="hidden-md hidden-sm hidden-xs"><a>34</a></td>
+                </tr>
+                <tr>
+                    <td>Edit | delete</td>
+                    <td>Doors</td>
+                    <td>All doors</td>
+                    <td class="hidden-md hidden-sm hidden-xs">AB:B:C</td>
+                    <td class="hidden-md hidden-sm hidden-xs">12</td>
+                </tr>                
+                <tr>
+                    <td>Edit | delete</td>
+                    <td>...</td>
+                    <td>...</td>
+                    <td class="hidden-md hidden-sm hidden-xs">...</td>
+                    <td class="hidden-md hidden-sm hidden-xs">...</td>
+                </tr>
+            </tbody>
+        </table>
     </div>
 {% endblock %}

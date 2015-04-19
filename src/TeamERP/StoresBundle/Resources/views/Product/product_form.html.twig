@@ -1,0 +1,67 @@
+<div class="form-group">
+    <label class="col-sm-2 control-label">Product name</label>
+    <div class="col-sm-10">
+        <input type="text" class="form-control" placeholder="e.g. PVC Pipe 3 cm "/>
+    </div>
+</div>
+<div class="form-group">
+    <label class="col-sm-2 control-label">Description</label>
+    <div class="col-sm-10">
+        <input type="text" class="form-control" placeholder="Long description"/>
+    </div>
+</div>
+<div class="form-group">
+    <label class="col-sm-2 control-label">Code</label>
+    <div class="col-sm-10">
+        <input type="text" class="form-control" placeholder="Code for this category"/>
+    </div>
+</div>
+<div class="form-group">
+    <label class="col-sm-2 control-label">Category</label>
+    <div class="col-sm-10">
+        <a href="#" id="show-category">
+            <button class="btn btn-lg btn-info" type="button">
+                <i class="fa fa-bars"></i> + Select or create category
+            </button>
+        </a>
+        <a href="#" id="hide-category">
+            <button class="btn btn-lg btn-info" type="button">
+                <i class="fa fa-bars"></i> - Hide category selection
+            </button>
+        </a>
+    </div>
+</div>
+<div class="form-group" id="category-list">
+    {% include 'TeamERPStoresBundle:Category:radio_list.html.twig' %}
+</div>
+<div class="form-group">
+    <label class="col-sm-2 control-label">Measure Unit</label>
+    <div class="col-sm-10">
+        <select class="form-control" id="measureUnit" onchange="change(this);">
+            <option>-----</option>
+            <option>boxes</option>
+            <option>Kg - kilograms</option>
+            <option>U - units</option>
+            <option>L- liters</option>
+            <option>m - meters</option>
+            <option>-----</option>
+            <option value="-1" class="">+ New measure unit</option>
+        </select>
+    </div>
+</div>
+<div id="measureUnitForm">
+    {% include 'TeamERPStoresBundle:Configuration:measure_unit_form.html.twig' %}
+</div>
+<div class="form-group">
+    <label class="col-sm-2 control-label">Reorder point</label>
+    <div class="col-sm-10">
+        <input type="text" class="form-control" placeholder="Munimun amount"/>
+    </div>
+</div>
+<div class="form-group">
+    <label class="col-sm-2 control-label">Preferred supplier</label>
+    <div class="col-sm-10">
+        <input type="text" class="form-control" placeholder="Information about the suppliers"/>
+    </div>
+</div>
+{% include 'TeamERPStoresBundle::action_save_controls.html.twig' %}

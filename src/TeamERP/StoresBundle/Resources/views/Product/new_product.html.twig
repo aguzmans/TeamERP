@@ -1,63 +1,13 @@
 {% extends "TeamERPStoresBundle::layout.html.twig"%}
 {% block content %}
+    <div class="form-header"><h1>New product</h1></div>     
     <div class="form">
         <form class="form-horizontal">
-            <div class="form-group">
-                <label class="col-sm-2 control-label">Product name</label>
-                <div class="col-sm-10">
-                    <input type="text" class="form-control" placeholder="e.g. PVC Pipe 3 cm "/>
-                </div>
-            </div>
-            <div class="form-group">
-                <label class="col-sm-2 control-label">Description</label>
-                <div class="col-sm-10">
-                    <input type="text" class="form-control" placeholder="Long description"/>
-                </div>
-            </div>
-            <div class="form-group">
-                <label class="col-sm-2 control-label">Code</label>
-                <div class="col-sm-10">
-                    <input type="text" class="form-control" placeholder="Code for this category"/>
-                </div>
-            </div>
-            <div class="form-group">
-                <label class="col-sm-2 control-label">Category</label>
-                <div class="col-sm-10">
-                    <a href="#"><button class="btn btn-lg btn-info" type="button"><i class="fa fa-bars"></i> + </button></a><span></span>
-                </div>
-            </div>
-            <div class="form-group">
-                <label class="col-sm-2 control-label">Measure Unit</label>
-                <div class="col-sm-10">
-                    <select class="form-control">
-                        <option>-----</option>
-                        <option>boxes</option>
-                        <option>Kg - kilograms</option>
-                        <option>U - units</option>
-                        <option>L- liters</option>
-                        <option>m - meters</option>
-                        <option>+ New</option>
-                    </select>
-                </div>
-            </div>
-            <div class="form-group">
-                <label class="col-sm-2 control-label">Reorder point</label>
-                <div class="col-sm-10">
-                    <input type="text" class="form-control" placeholder="Munimun amount"/>
-                </div>
-            </div>
-            <div class="form-group">
-                <label class="col-sm-2 control-label">Preferred supplier</label>
-                <div class="col-sm-10">
-                    <input type="text" class="form-control" placeholder="Information about the suppliers"/>
-                </div>
-            </div>
-            <div class="form-group">
-                <div class="col-sm-offset-2 col-sm-10">
-                    <input type="submit" class="btn btn-primary" value="Save"/>
-                    <input type="reset" class="btn btn-default" value="Cancel"/>
-                </div> 
-            </div>
+            {% include 'TeamERPStoresBundle:Product:product_form.html.twig' %}
         </form>
     </div>
+{% endblock %}
+{% block javascripts %}
+    {{ parent() }}
+    <script src="{{ asset('bundles/teamerpstores/js/functions.js') }}"></script>
 {% endblock %}

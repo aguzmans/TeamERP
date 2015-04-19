@@ -1,12 +1,17 @@
 #main page
 team_erp_stores_dashboard:
     pattern:  /dashboard
-    defaults: { _controller: TeamERPStoresBundle:Product:dashboard }
+    defaults: { _controller: TeamERPStoresBundle:Dashboard:dashboard }
 
 #create new category    
 team_erp_stores_new_category:
     pattern:  /new/category
     defaults: { _controller: TeamERPStoresBundle:Category:new }    
+
+team_erp_stores_new_measure_unit:
+    pattern:  /new/measure/unit
+    defaults: { _controller: TeamERPStoresBundle:Configuration:newMeasureUnit }    
+
     
 #Create new product
 team_erp_stores_new_product:
