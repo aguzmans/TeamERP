@@ -2,14 +2,17 @@
 team_erp_stores_dashboard:
     pattern:  /dashboard
     defaults: { _controller: TeamERPStoresBundle:Product:dashboard }
-#Create new product
-team_erp_stores_new_product:
-    pattern:  /new/product
-    defaults: { _controller: TeamERPStoresBundle:Product:new }
+
 #create new category    
 team_erp_stores_new_category:
     pattern:  /new/category
     defaults: { _controller: TeamERPStoresBundle:Category:new }    
+    
+#Create new product
+team_erp_stores_new_product:
+    pattern:  /new/product
+    defaults: { _controller: TeamERPStoresBundle:Product:new }
+
 #Receive products
 team_erp_stores_invoice:
     pattern:  /new/invoice

@@ -1,4 +1,32 @@
 {% extends "TeamERPStoresBundle::layout.html.twig"%}
 {% block content %}
-    <span>This is the Stores New Category</span>
+    <div class="form-header"><h1>New Category</h1></div>     
+    <div class="form">
+        <form class="form-horizontal">
+            <div class="form-group">
+                <label class="col-sm-2 control-label">Category name</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" placeholder="e.g. cables or doors"/>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label">Description</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" placeholder="Long description"/>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label">Category code</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" placeholder="Code for this category"/>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                    <input type="submit" class="btn btn-primary" value="Save"/>
+                    <input type="reset" class="btn btn-default" value="Cancel"/>
+                </div> 
+            </div>            
+        </form>
+    </div>
 {% endblock %}
