@@ -1,0 +1,15 @@
+{% extends "TeamERPStoresBundle::layout.html.twig"%}
+{% block content %}
+    <div class="form-header"><h1>New quantity on hand for product xxxxxx with measure unit yyyy</h1></div>
+    <div class="form">
+        <form class="form-horizontal">
+            <div class="form-group">
+                <label class="col-sm-2 control-label">New Quantity</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" placeholder="A number to replaces the total"/>
+                </div>
+            </div>
+        </form>
+        {% include 'TeamERPStoresBundle::action_save_controls.html.twig' %}
+    </div>
+{% endblock %}

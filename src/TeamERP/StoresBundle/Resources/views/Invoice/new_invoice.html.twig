@@ -1,4 +1,14 @@
 {% extends "TeamERPStoresBundle::layout.html.twig"%}
 {% block content %}
-    <span>This is the New Invoice</span>
+    <div class="form-header"><h1>New invoice receipt</h1></div>     
+        <div class="form">
+            <form class="form-horizontal">
+                {% include 'TeamERPStoresBundle:Invoice:invoice_form.html.twig' %}
+                {% include 'TeamERPStoresBundle::action_save_controls.html.twig' %}                
+            </form>
+        </div>
+{% endblock %}
+{% block javascripts %}
+    {{ parent() }}
+    <script src="{{ asset('bundles/teamerpstores/js/functions.js') }}"></script>
 {% endblock %}

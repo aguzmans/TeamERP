@@ -1,6 +1,5 @@
 
 $(document).ready(function(){
-
     //  Categories show hide 
     $("#hide-category").hide();
     $("#category-list").hide();
@@ -9,24 +8,22 @@ $(document).ready(function(){
         $("#show-category").hide();
         $("#hide-category").show();
     });
-    
     $("#hide-category").click(function(){
         $("#category-list").hide();
         $("#show-category").show();
         $("#hide-category").hide();
     });
-
-    // New Measure Unit show Hide.
-    $("#measureUnitForm").hide(); 
+    // Product of the invoice 
+    // add products
+    $("#productInvoiced").hide();
+    $("#show-product-list").click(function(){
+        $("#productInvoiced").show();
+    });
     
-//    var num = -1;
-//    $("div#measureUnit select.select option").each(function(){
-//        alert('AA');
-//        if($(this).val()==num){ 
-//            $('#measureUnitForm').show();    
-//        }
-//    });
+    // New Measure Unit show Hide.
+    $("#measureUnitForm").hide();
 });
+// New Mesure Unit select New Unit On Change.
 function change(selThis) {
     if(selThis.options[selThis.selectedIndex].value === "-1"){
         $('#measureUnitForm').show();
@@ -35,4 +32,7 @@ function change(selThis) {
     }
 }
 
+function clickDelete(selThis){
+    confirm("Are you sure you want to delete XXXX ");
+}
 

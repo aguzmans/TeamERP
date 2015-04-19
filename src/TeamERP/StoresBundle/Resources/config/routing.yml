@@ -7,17 +7,22 @@ team_erp_stores_dashboard:
 team_erp_stores_new_category:
     pattern:  /new/category
     defaults: { _controller: TeamERPStoresBundle:Category:new }    
-
+#Create measure units
 team_erp_stores_new_measure_unit:
     pattern:  /new/measure/unit
-    defaults: { _controller: TeamERPStoresBundle:Configuration:newMeasureUnit }    
-
-    
+    defaults: { _controller: TeamERPStoresBundle:Configuration:newMeasureUnit }
 #Create new product
 team_erp_stores_new_product:
     pattern:  /new/product
     defaults: { _controller: TeamERPStoresBundle:Product:new }
-
+#Search product
+team_erp_stores_search_product:
+    pattern:  /search/product
+    defaults: { _controller: TeamERPStoresBundle:Product:search }
+#Add new quantity on hand
+team_erp_stores_on_hand:
+    pattern:  /on/hand
+    defaults: { _controller: TeamERPStoresBundle:Product:onHand }    
 #Receive products
 team_erp_stores_invoice:
     pattern:  /new/invoice
