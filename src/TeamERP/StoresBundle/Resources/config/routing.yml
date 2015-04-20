@@ -27,7 +27,14 @@ team_erp_stores_on_hand:
 team_erp_stores_invoice:
     pattern:  /new/invoice
     defaults: { _controller: TeamERPStoresBundle:Invoice:new }    
+#Receive products
+team_erp_stores_list_invoice:
+    pattern:  /list/invoice
+    defaults: { _controller: TeamERPStoresBundle:Invoice:list }
 #issue job orders
 team_erp_stores_issue_order:
     pattern:  /new/issue
     defaults: { _controller: TeamERPStoresBundle:Issue:new }    
+team_erp_stores_list_issue:
+    pattern:  /list/issue
+    defaults: { _controller: TeamERPStoresBundle:Issue:list }     

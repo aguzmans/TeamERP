@@ -10,4 +10,8 @@ class IssueController extends Controller
     {
         return $this->render('TeamERPStoresBundle:Issue:new_issue.html.twig');
     }   
+    public function listAction()
+    {
+        return $this->render('TeamERPStoresBundle:Issue:list_issues.html.twig');
+    }
 }

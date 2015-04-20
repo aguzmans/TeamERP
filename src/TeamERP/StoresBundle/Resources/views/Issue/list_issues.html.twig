@@ -1,0 +1,33 @@
+{% extends "TeamERPStoresBundle::layout.html.twig"%}
+{% block content %}
+    <div class="form-header"><h1>New invoice receipt</h1></div>
+        <table class="table table-striped" id="products-table">
+            <thead>
+                <tr>
+                    <th>Actions</th>
+                    <th>Destination</th>
+                    <th>^Date</th>
+                    <th>User</th>
+                    <th>Job Order</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>view | Undo</td>
+                    <td>New plot P3465</td>
+                    <td>2015-03-24</td>
+                    <td>Kay</td>
+                    <td>00113</td>
+                    <td>Done</td>
+                </tr>
+                <tr>
+                    <td>view | Execute | Cancel</td>
+                    <td>Production Line 1</td>
+                    <td>2015-03-23</td>
+                    <td>Lily</td>
+                    <td>00123</td>
+                    <td>Pending</td>
+                </tr>
+            </tbody>
+        </table>{% endblock %}
