@@ -1,5 +1,5 @@
 
-$(document).ready(function(){
+$(function(){
     //  Categories show hide 
     $("#hide-category").hide();
     $("#category-list").hide();
