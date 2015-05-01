@@ -2,7 +2,11 @@
 <html>
     <head>
         <meta lang="en" charset="UTF-8" />
-        <title>{% block title %}Team IMS{% endblock %}</title>
+        <title>
+            {% block title %}
+                {{ 'base.title.homePage'|trans }}
+            {% endblock %}
+        </title>
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
         <script src="{{ asset('bundles/teamerpbase/js/jquery-2.0.0.min.js') }}"></script>
         <script src="{{ asset('bundles/teamerpbase/js/jquery-ui-1.11.0/jquery-ui.min.js') }}"></script>

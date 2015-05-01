@@ -4,8 +4,10 @@ imports:
 #    - { resource: "@TeamERPBaseBundle/Resources/config/services.yml" }
 
 framework:
+    translator: { fallback: en }
     #esi:             ~
-    translator:      { fallback: "%locale%" }
+    #translator:      { fallback: "%locale%" }
+#    translator: { fallbacks: en }
     secret:          "%secret%"
     router:
         resource: "%kernel.root_dir%/config/routing.yml"
