@@ -36,11 +36,17 @@
             <div id="user-area" class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
                 {% if (app.user and is_granted("IS_AUTHENTICATED_REMEMBERED")) %}
                     <a href="{{ path('fos_user_security_logout') }}">
-                        <button class="btn btn-lg btn-warning" type="button"><i class="fa fa-power-off"></i>
+                        <button class="btn btn-lg btn-warning" type="button">
+                            <i class="fa fa-power-off"></i>
                             {{ 'layout.logout'|trans({}, 'FOSUserBundle') }} 
-                        </button></a>
-                        <a href="{{ path('fos_user_profile_show') }}"><button class="btn btn-lg btn-info" type="button"><i class="fa fa-bars"></i> {{ 'layout.logged_in_as'|trans({'%username%': app.user.username}, 'FOSUserBundle') }}
-                            </button></a>
+                        </button>
+                    </a>
+                    <a href="{{ path('fos_user_profile_show') }}">
+                            <button class="btn btn-lg btn-info" type="button">
+                                <i class="fa fa-bars"></i>
+                                {{ 'layout.logged_in_as'|trans({'%username%': app.user.username}, 'FOSUserBundle') }}
+                            </button>
+                    </a>
                 {% else %}
                     <div class="">
                         <a href="{{ path('fos_user_security_login') }}">

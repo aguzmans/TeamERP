@@ -1,6 +1,21 @@
 base:
+    #all titles
     title:
         homePage: TeamERP IMS for BA.
-        general: TeamERP
+        sales: TeamERP | Sales
         stores: TeamERP | Stores
+        user: TeamERP | Admin
+        # Default title to use.
+        general: TeamERP 
+    # footer results
+    footer: Developer Abel Guzman Sanchez
+    # Menu
+    menu:
+        home: Home
+        sales: Sales
+        stores: Warehouse
+        admin: Admin
+        
+
+        
     

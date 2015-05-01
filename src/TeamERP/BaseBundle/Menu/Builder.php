@@ -26,21 +26,22 @@ class Builder extends ContainerAware {
 
     public function mainMenu(Request $request) {
         $menu = $this->factory->createItem('root');
+        /* $this->get('translator')->trans('base.menu.home') */
         $menu->setChildrenAttributes(array('class' => 'nav nav-pills'));
-        $menu->addChild('Home', array('route' => 'team_erp_base_homepage',
+        $menu->addChild('base.menu.home', array('route' => 'team_erp_base_homepage',
             'labelAttributes' => array('icon' => 'fa fa-home')));
         if ($this->isLoggedIn == true) {
             if ($this->securityContext->isGranted("ROLE_SALES")) {
-                $menu->addChild('Sales', array('route' => 'team_erp_customer_index',
+                $menu->addChild('base.menu.sales', array('route' => 'team_erp_customer_index',
                     'routeParameters' => array('page' => 1),
                     'labelAttributes' => array('icon' => 'fa fa-money')));
             }
             if ($this->securityContext->isGranted("ROLE_COMPANY_ADMIN")) {
-                $menu->addChild('Stores', array('route' => 'team_erp_stores_dashboard',
+                $menu->addChild('base.menu.stores', array('route' => 'team_erp_stores_dashboard',
                     'labelAttributes' => array('icon' => 'fa fa-cogs')));
             }            
             if ($this->securityContext->isGranted("ROLE_COMPANY_ADMIN")) {
-                $menu->addChild('Admin', array('route' => 'teamerp_user_main',
+                $menu->addChild('base.menu.admin', array('route' => 'teamerp_user_main',
                     'labelAttributes' => array('icon' => 'fa fa-wheelchair')));
             }            
         }

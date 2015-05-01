@@ -1,4 +1,7 @@
 {% extends "TeamERPBaseBundle:General:general.html.twig" %}
+{% block title %}
+    {{ 'base.title.sales'|trans }}
+{% endblock %}
 {% block leftBar %}
     <div id="left-side-bar" class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
         {{ knp_menu_render('sales_side_left')}}
