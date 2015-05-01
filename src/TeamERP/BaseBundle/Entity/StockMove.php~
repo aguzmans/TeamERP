@@ -1,11 +1,11 @@
 <?php
-namespace TeamERP\StoresBundle\Entity;
+namespace TeamERP\BaseBundle\Entity;
 use Doctrine\ORM\Mapping AS ORM;
 
 /**
  * @ORM\Entity
  */
-class Category
+class StockMove
 {
     /**
      * @ORM\Id
@@ -13,21 +13,35 @@ class Category
      * @ORM\GeneratedValue(strategy="AUTO")
      */
     private $id;
-
     /**
-     * @ORM\Column(type="string", length=250, nullable=true)
+     * @ORM\ManyToMany(targetEntity="TeamERP\BaseBundle\Entity\Product", mappedBy="job")
      */
-    private $name;
-
+    private $product;
     /**
      * @ORM\Column(type="string", length=50, nullable=true)
      */
-    private $code;
-
-    /**
-     * @ORM\OneToMany(targetEntity="TeamERP\StoresBundle\Entity\Product", mappedBy="category")
+    private $documentNumber;
+     /**
+     * @ORM\Column(type="boolean")
      */
-    private $product;
+     private $inOrOut;
+     /**
+     * @ORM\Column(type="string", length=50, nullable=true)
+     */
+    private $description;
+    /**
+     * @ORM\Column(type="datetime")
+     */
+    private $date;
+     /**
+     * @ORM\Column(type="datetime", nullable=true)
+     */
+    private $creation_date;
+    /**
+     * @ORM\ManyToOne(targetEntity="TeamERP\CustomerBundle\Entity\Customer", inversedBy="stock_move", cascade={"persist"})
+     * @ORM\JoinColumn(name="customer_id", referencedColumnName="id")
+     */
+    private $customer;
     /**
      * Constructor
      */
@@ -47,56 +61,56 @@ class Category
     }
 
     /**
-     * Set name
+     * Set number
      *
-     * @param string $name
-     * @return Category
+     * @param string $number
+     * @return Job
      */
-    public function setName($name)
+    public function setNumber($number)
     {
-        $this->name = $name;
+        $this->number = $number;
 
         return $this;
     }
 
     /**
-     * Get name
+     * Get number
      *
      * @return string 
      */
-    public function getName()
+    public function getNumber()
     {
-        return $this->name;
+        return $this->number;
     }
 
     /**
-     * Set code
+     * Set creation_date
      *
-     * @param string $code
-     * @return Category
+     * @param \DateTime $creationDate
+     * @return Job
      */
-    public function setCode($code)
+    public function setCreationDate($creationDate)
     {
-        $this->code = $code;
+        $this->creation_date = $creationDate;
 
         return $this;
     }
 
     /**
-     * Get code
+     * Get creation_date
      *
-     * @return string 
+     * @return \DateTime 
      */
-    public function getCode()
+    public function getCreationDate()
     {
-        return $this->code;
+        return $this->creation_date;
     }
 
     /**
      * Add product
      *
      * @param \TeamERP\StoresBundle\Entity\Product $product
-     * @return Category
+     * @return Job
      */
     public function addProduct(\TeamERP\StoresBundle\Entity\Product $product)
     {

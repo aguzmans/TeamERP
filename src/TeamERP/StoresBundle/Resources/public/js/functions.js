@@ -59,11 +59,15 @@ function makeTableRows(rowValue){
         var cell3 = row.insertCell(3);
         var cell4 = row.insertCell(4);
         // Add some text to the new cells:
-        cell0.innerHTML = "<input type='text' placeholder='It will autocomplete' id='item"+rowValue+"'>";
-        cell1.innerHTML = "<input type='text' placeholder='' id='quantity"+rowValue+"'>";
+        cell0.innerHTML = "<input type='text' placeholder='Product autocomplete' id='item"+rowValue+"'>";
+        cell1.innerHTML = "<input type='text' placeholder='A number' id='quantity"+rowValue+"'>";
         cell2.innerHTML = "From DB";
         cell3.innerHTML = "<input type='text' placeholder='35P' id='costUnit"+rowValue+"'>";
-        cell4.innerHTML = "<input type='text' placeholder='Quantity * Cost' id='cost0"+rowValue+"'>";
+        cell4.innerHTML = "<input type='text' placeholder='Quantity * Cost' id='costT"+rowValue+"'>";
+        document.getElementById("item"+rowValue).className = 'form-control';
+        document.getElementById("quantity"+rowValue).className = 'form-control';
+        document.getElementById("costUnit"+rowValue).className = 'form-control';
+        document.getElementById("costT"+rowValue).className = 'form-control';
 }
 function destryTableRow (rowValue){
     var table = document.getElementById("products-table");

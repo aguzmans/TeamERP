@@ -1,11 +1,11 @@
 <?php
-namespace TeamERP\StoresBundle\Entity;
+namespace TeamERP\BaseBundle\Entity;
 use Doctrine\ORM\Mapping AS ORM;
 
 /**
  * @ORM\Entity
  */
-class MesureUnit
+class MeasureUnit
 {
     /**
      * @ORM\Id
@@ -13,26 +13,18 @@ class MesureUnit
      * @ORM\GeneratedValue(strategy="AUTO")
      */
     private $id;
-
     /**
      * @ORM\Column(type="string", length=100, nullable=true)
      */
     private $name;
-
     /**
      * @ORM\Column(type="string", length=10, nullable=true)
      */
     private $abreviation;
-
     /**
-     * @ORM\OneToMany(targetEntity="TeamERP\StoresBundle\Entity\ProductActivity", mappedBy="mesureUnit")
+     * @ORM\OneToMany(targetEntity="TeamERP\BaseBundle\Entity\Product", mappedBy="mesureUnit")
      */
-    private $pproductActivity;
-
-    /**
-     * @ORM\ManyToMany(targetEntity="TeamERP\StoresBundle\Entity\Product", mappedBy="mesureUnit")
-     */
-    private $product;
+    private $product;    
     /**
      * Constructor
      */

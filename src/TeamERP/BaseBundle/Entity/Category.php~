@@ -1,11 +1,11 @@
 <?php
-namespace TeamERP\StoresBundle\Entity;
+namespace TeamERP\BaseBundle\Entity;
 use Doctrine\ORM\Mapping AS ORM;
 
 /**
  * @ORM\Entity
  */
-class AJob
+class Category
 {
     /**
      * @ORM\Id
@@ -15,19 +15,23 @@ class AJob
     private $id;
 
     /**
+     * @ORM\Column(type="string", length=250, nullable=true)
+     */
+    private $name;
+
+    /**
      * @ORM\Column(type="string", length=50, nullable=true)
      */
-    private $number;
+    private $code;
 
     /**
-     * @ORM\Column(type="datetime", nullable=true)
-     */
-    private $creation_date;
-
-    /**
-     * @ORM\OneToMany(targetEntity="TeamERP\StoresBundle\Entity\Product", mappedBy="job")
+     * @ORM\OneToMany(targetEntity="TeamERP\BaseBundle\Entity\Product", mappedBy="category")
      */
     private $product;
+    /**
+     * @ORM\Column(type="string", length=250, nullable=true)
+     */
+    private $description;
     /**
      * Constructor
      */
@@ -47,56 +51,56 @@ class AJob
     }
 
     /**
-     * Set number
+     * Set name
      *
-     * @param string $number
-     * @return Job
+     * @param string $name
+     * @return Category
      */
-    public function setNumber($number)
+    public function setName($name)
     {
-        $this->number = $number;
+        $this->name = $name;
 
         return $this;
     }
 
     /**
-     * Get number
+     * Get name
      *
      * @return string 
      */
-    public function getNumber()
+    public function getName()
     {
-        return $this->number;
+        return $this->name;
     }
 
     /**
-     * Set creation_date
+     * Set code
      *
-     * @param \DateTime $creationDate
-     * @return Job
+     * @param string $code
+     * @return Category
      */
-    public function setCreationDate($creationDate)
+    public function setCode($code)
     {
-        $this->creation_date = $creationDate;
+        $this->code = $code;
 
         return $this;
     }
 
     /**
-     * Get creation_date
+     * Get code
      *
-     * @return \DateTime 
+     * @return string 
      */
-    public function getCreationDate()
+    public function getCode()
     {
-        return $this->creation_date;
+        return $this->code;
     }
 
     /**
      * Add product
      *
      * @param \TeamERP\StoresBundle\Entity\Product $product
-     * @return Job
+     * @return Category
      */
     public function addProduct(\TeamERP\StoresBundle\Entity\Product $product)
     {

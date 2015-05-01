@@ -1,11 +1,12 @@
 <?php
-namespace TeamERP\StoresBundle\Entity;
+namespace TeamERP\BaseBundle\Entity;
 use Doctrine\ORM\Mapping AS ORM;
 
 /**
  * @ORM\Entity
+ * @ORM\Table(name="product_stockmove")
  */
-class Product
+class ProductStockMove
 {
     /**
      * @ORM\Id
@@ -13,55 +14,31 @@ class Product
      * @ORM\GeneratedValue(strategy="AUTO")
      */
     private $id;
+    /**
+     * @ORM\Column(type="decimal", length=50, nullable=true)
+     */
+    private $quantity;
+    /**
+     * @ORM\ManyToOne(targetEntity="TeamERP\BaseBundle\Entity\Product", inversedBy="product_stockmove")
+     * @ORM\JoinColumn(name="product_id", referencedColumnName="id")
+     */
+    private $product;
 
     /**
-     * @ORM\Column(type="string", length=50, nullable=true)
+     * @ORM\ManyToOne(targetEntity="TeamERP\BaseBundle\Entity\stockMove", inversedBy="product_stockmove")
+     * @ORM\JoinColumn(name="stock_move_id", referencedColumnName="id")
      */
-    private $code;
-
-    /**
-     * @ORM\Column(type="string", length=250, nullable=true)
-     */
-    private $description;
-
-    /**
-     * @ORM\Column(type="datetime", nullable=true)
-     */
-    private $date_received;
-
-    /**
-     * @ORM\OneToMany(targetEntity="TeamERP\StoresBundle\Entity\ProductActivity", mappedBy="product")
-     */
-    private $pproductActivity;
-
-    /**
-     * @ORM\ManyToOne(targetEntity="TeamERP\StoresBundle\Entity\Category", inversedBy="product")
-     * @ORM\JoinColumn(name="category_id", referencedColumnName="id")
-     */
-    private $category;
-
-    /**
-     * @ORM\ManyToOne(targetEntity="TeamERP\StoresBundle\Entity\AJob", inversedBy="product")
-     * @ORM\JoinColumn(name="job_id", referencedColumnName="id")
-     */
-    private $aJob;
-
-    /**
-     * @ORM\ManyToMany(targetEntity="TeamERP\StoresBundle\Entity\MesureUnit", inversedBy="product")
-     * @ORM\JoinTable(
-     *     name="MesureUnit2Product",
-     *     joinColumns={@ORM\JoinColumn(name="product_id", referencedColumnName="id", nullable=false)},
-     *     inverseJoinColumns={@ORM\JoinColumn(name="mesure_unit_id", referencedColumnName="id", nullable=false)}
-     * )
-     */
-    private $mesureUnit;
+    private $StockMove;
+    
     /**
      * Constructor
      */
+    
     public function __construct()
     {
-        $this->pproductActivity = new \Doctrine\Common\Collections\ArrayCollection();
+//        $this->pproductActivity = new \Doctrine\Common\Collections\ArrayCollection();
         $this->mesureUnit = new \Doctrine\Common\Collections\ArrayCollection();
+        //$this->StockMove = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
     /**
@@ -253,5 +230,159 @@ class Product
     public function getMesureUnit()
     {
         return $this->mesureUnit;
+    }
+
+    /**
+     * Set name
+     *
+     * @param string $name
+     *
+     * @return Product
+     */
+    public function setName($name)
+    {
+        $this->name = $name;
+
+        return $this;
+    }
+
+    /**
+     * Get name
+     *
+     * @return string
+     */
+    public function getName()
+    {
+        return $this->name;
+    }
+
+    /**
+     * Set cost
+     *
+     * @param \double $cost
+     *
+     * @return Product
+     */
+    public function setCost(\double $cost)
+    {
+        $this->cost = $cost;
+
+        return $this;
+    }
+
+    /**
+     * Get cost
+     *
+     * @return \double
+     */
+    public function getCost()
+    {
+        return $this->cost;
+    }
+
+    /**
+     * Set qtyToPurchase
+     *
+     * @param \double $qtyToPurchase
+     *
+     * @return Product
+     */
+    public function setQtyToPurchase(\double $qtyToPurchase)
+    {
+        $this->qtyToPurchase = $qtyToPurchase;
+
+        return $this;
+    }
+
+    /**
+     * Get qtyToPurchase
+     *
+     * @return \double
+     */
+    public function getQtyToPurchase()
+    {
+        return $this->qtyToPurchase;
+    }
+
+    /**
+     * Set reorderPoint
+     *
+     * @param \double $reorderPoint
+     *
+     * @return Product
+     */
+    public function setReorderPoint(\double $reorderPoint)
+    {
+        $this->reorderPoint = $reorderPoint;
+
+        return $this;
+    }
+
+    /**
+     * Get reorderPoint
+     *
+     * @return \double
+     */
+    public function getReorderPoint()
+    {
+        return $this->reorderPoint;
+    }
+
+    /**
+     * Set qtyOnSalesOrder
+     *
+     * @param \double $qtyOnSalesOrder
+     *
+     * @return Product
+     */
+    public function setQtyOnSalesOrder(\double $qtyOnSalesOrder)
+    {
+        $this->qtyOnSalesOrder = $qtyOnSalesOrder;
+
+        return $this;
+    }
+
+    /**
+     * Get qtyOnSalesOrder
+     *
+     * @return \double
+     */
+    public function getQtyOnSalesOrder()
+    {
+        return $this->qtyOnSalesOrder;
+    }
+
+    /**
+     * Add stockMove
+     *
+     * @param \TeamERP\BaseBundle\Entity\stockMove $stockMove
+     *
+     * @return Product
+     */
+    public function addStockMove(\TeamERP\BaseBundle\Entity\stockMove $stockMove)
+    {
+        $this->StockMove[] = $stockMove;
+
+        return $this;
+    }
+
+    /**
+     * Remove stockMove
+     *
+     * @param \TeamERP\BaseBundle\Entity\stockMove $stockMove
+     */
+    public function removeStockMove(\TeamERP\BaseBundle\Entity\stockMove $stockMove)
+    {
+        $this->StockMove->removeElement($stockMove);
+    }
+
+    /**
+     * Get stockMove
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getStockMove()
+    {
+        return $this->StockMove;
     }
 }

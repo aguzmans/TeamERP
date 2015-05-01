@@ -65,7 +65,10 @@ class Customer
      * @ORM\JoinColumn(name="company_id", referencedColumnName="id")
      */
     private $company;
-
+    /**
+     * @ORM\OneToMany(targetEntity="TeamERP\BaseBundle\Entity\StockMove", mappedBy="customer")
+     */
+    private $stockMove;
     /**
      * Get id
      *
@@ -292,4 +295,45 @@ class Customer
         $this->typeContact = $aContactType;
     }
     
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->stockMove = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * Add stockMove
+     *
+     * @param \TeamERP\BaseBundle\Entity\StockMove $stockMove
+     *
+     * @return Customer
+     */
+    public function addStockMove(\TeamERP\BaseBundle\Entity\StockMove $stockMove)
+    {
+        $this->stockMove[] = $stockMove;
+
+        return $this;
+    }
+
+    /**
+     * Remove stockMove
+     *
+     * @param \TeamERP\BaseBundle\Entity\StockMove $stockMove
+     */
+    public function removeStockMove(\TeamERP\BaseBundle\Entity\StockMove $stockMove)
+    {
+        $this->stockMove->removeElement($stockMove);
+    }
+
+    /**
+     * Get stockMove
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getStockMove()
+    {
+        return $this->stockMove;
+    }
 }
