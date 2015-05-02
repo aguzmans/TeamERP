@@ -1,6 +1,6 @@
 {% extends "TeamERPStoresBundle::layout.html.twig"%}
 {% block content %}
-    <div class="form-header"><h1>New category</h1></div>
+    <div class="form-header"><h1>{{action}} category</h1></div>
     {% include 'TeamERPStoresBundle::status_message.html.twig' %}
     <div class="form">
         {{ form_start(form, {'attr': {'class': 'form-horizontal'}}) }}
@@ -10,40 +10,39 @@
         {{ form_end(form) }}            
         </form>
     </div>
+    {% if result[0].name is defined %}
     <div>
         <table class="table table-striped">
             <thead>
                 <tr>
                     <th>Actions</th>
                     <th>Category Name</th>
+                    <th class="">Code</th>                    
                     <th>Description</th>
-                    <th class="hidden-md hidden-sm hidden-xs">Code</th>
                     <th class="hidden-md hidden-sm hidden-xs">Products</th>
                 </tr>
             </thead>
             <tbody>
+                {% for key,category in result %}
                 <tr>
-                    <td>Edit | delete</td>
-                    <td>Cables</td>
-                    <td>All cables</td>
-                    <td class="hidden-md hidden-sm hidden-xs">A:B:C</td>
+                    <td>
+                        <a class="warning" 
+                           href="{{path('team_erp_stores_edit_category', {'id' : category.id })}}" 
+                           onclick="return confirm('Are you sure you want to delete '+{{category.name}});">
+                            <i class="fa fa-pencil-square-o"></i>
+                        </a> | 
+                        <a class="danger" href="{{path('team_erp_stores_remove_category', {'id' : category.id })}}">
+                            <i class="fa fa-trash-o"></i> 
+                        </a>
+                    </td>
+                    <td>{{category.name}}</td>
+                    <td class="">{{category.code}}</td>                    
+                    <td>{{category.description}}</td>
                     <td class="hidden-md hidden-sm hidden-xs"><a>34</a></td>
                 </tr>
-                <tr>
-                    <td>Edit | delete</td>
-                    <td>Doors</td>
-                    <td>All doors</td>
-                    <td class="hidden-md hidden-sm hidden-xs">AB:B:C</td>
-                    <td class="hidden-md hidden-sm hidden-xs">12</td>
-                </tr>                
-                <tr>
-                    <td>Edit | delete</td>
-                    <td>...</td>
-                    <td>...</td>
-                    <td class="hidden-md hidden-sm hidden-xs">...</td>
-                    <td class="hidden-md hidden-sm hidden-xs">...</td>
-                </tr>
+                {% endfor %}
             </tbody>
         </table>
     </div>
+    {% endif %}
 {% endblock %}

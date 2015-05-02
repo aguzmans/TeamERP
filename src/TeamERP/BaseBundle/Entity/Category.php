@@ -40,7 +40,7 @@ class Category
     /**
      * Get id
      *
-     * @return integer 
+     * @return integer
      */
     public function getId()
     {
@@ -51,6 +51,7 @@ class Category
      * Set name
      *
      * @param string $name
+     *
      * @return Category
      */
     public function setName($name)
@@ -63,7 +64,7 @@ class Category
     /**
      * Get name
      *
-     * @return string 
+     * @return string
      */
     public function getName()
     {
@@ -74,6 +75,7 @@ class Category
      * Set code
      *
      * @param string $code
+     *
      * @return Category
      */
     public function setCode($code)
@@ -86,44 +88,11 @@ class Category
     /**
      * Get code
      *
-     * @return string 
+     * @return string
      */
     public function getCode()
     {
         return $this->code;
-    }
-
-    /**
-     * Add product
-     *
-     * @param \TeamERP\StoresBundle\Entity\Product $product
-     * @return Category
-     */
-    public function addProduct(\TeamERP\StoresBundle\Entity\Product $product)
-    {
-        $this->product[] = $product;
-
-        return $this;
-    }
-
-    /**
-     * Remove product
-     *
-     * @param \TeamERP\StoresBundle\Entity\Product $product
-     */
-    public function removeProduct(\TeamERP\StoresBundle\Entity\Product $product)
-    {
-        $this->product->removeElement($product);
-    }
-
-    /**
-     * Get product
-     *
-     * @return \Doctrine\Common\Collections\Collection 
-     */
-    public function getProduct()
-    {
-        return $this->product;
     }
 
     /**
@@ -148,5 +117,39 @@ class Category
     public function getDescription()
     {
         return $this->description;
+    }
+
+    /**
+     * Add product
+     *
+     * @param \TeamERP\BaseBundle\Entity\Product $product
+     *
+     * @return Category
+     */
+    public function addProduct(\TeamERP\BaseBundle\Entity\Product $product)
+    {
+        $this->product[] = $product;
+
+        return $this;
+    }
+
+    /**
+     * Remove product
+     *
+     * @param \TeamERP\BaseBundle\Entity\Product $product
+     */
+    public function removeProduct(\TeamERP\BaseBundle\Entity\Product $product)
+    {
+        $this->product->removeElement($product);
+    }
+
+    /**
+     * Get product
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getProduct()
+    {
+        return $this->product;
     }
 }

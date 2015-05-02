@@ -13,17 +13,14 @@ class Category
      * @ORM\GeneratedValue(strategy="AUTO")
      */
     private $id;
-
     /**
      * @ORM\Column(type="string", length=250, nullable=true)
      */
     private $name;
-
     /**
      * @ORM\Column(type="string", length=50, nullable=true)
      */
     private $code;
-
     /**
      * @ORM\OneToMany(targetEntity="TeamERP\BaseBundle\Entity\Product", mappedBy="category")
      */
@@ -43,7 +40,7 @@ class Category
     /**
      * Get id
      *
-     * @return integer 
+     * @return integer
      */
     public function getId()
     {
@@ -54,6 +51,7 @@ class Category
      * Set name
      *
      * @param string $name
+     *
      * @return Category
      */
     public function setName($name)
@@ -66,7 +64,7 @@ class Category
     /**
      * Get name
      *
-     * @return string 
+     * @return string
      */
     public function getName()
     {
@@ -77,6 +75,7 @@ class Category
      * Set code
      *
      * @param string $code
+     *
      * @return Category
      */
     public function setCode($code)
@@ -89,7 +88,7 @@ class Category
     /**
      * Get code
      *
-     * @return string 
+     * @return string
      */
     public function getCode()
     {
@@ -97,12 +96,37 @@ class Category
     }
 
     /**
-     * Add product
+     * Set description
      *
-     * @param \TeamERP\StoresBundle\Entity\Product $product
+     * @param string $description
+     *
      * @return Category
      */
-    public function addProduct(\TeamERP\StoresBundle\Entity\Product $product)
+    public function setDescription($description)
+    {
+        $this->description = $description;
+
+        return $this;
+    }
+
+    /**
+     * Get description
+     *
+     * @return string
+     */
+    public function getDescription()
+    {
+        return $this->description;
+    }
+
+    /**
+     * Add product
+     *
+     * @param \TeamERP\BaseBundle\Entity\Product $product
+     *
+     * @return Category
+     */
+    public function addProduct(\TeamERP\BaseBundle\Entity\Product $product)
     {
         $this->product[] = $product;
 
@@ -112,9 +136,9 @@ class Category
     /**
      * Remove product
      *
-     * @param \TeamERP\StoresBundle\Entity\Product $product
+     * @param \TeamERP\BaseBundle\Entity\Product $product
      */
-    public function removeProduct(\TeamERP\StoresBundle\Entity\Product $product)
+    public function removeProduct(\TeamERP\BaseBundle\Entity\Product $product)
     {
         $this->product->removeElement($product);
     }
@@ -122,7 +146,7 @@ class Category
     /**
      * Get product
      *
-     * @return \Doctrine\Common\Collections\Collection 
+     * @return \Doctrine\Common\Collections\Collection
      */
     public function getProduct()
     {

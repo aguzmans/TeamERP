@@ -46,12 +46,14 @@
     <tbody>
         {% for key,customer in pfresult %}
         <tr>
-            <td><a class="warning" href="{{path('team_erp_customer_edit'
-, {'id' : customer.id })}}">
-                    <i class="fa fa-pencil-square-o"></i></a> | 
-                <a class="danger" href="{{path('team_erp_customer_delete'
-, {'id' : customer.id })}}">
-                    <i class="fa fa-trash-o"></i> </a></td>
+            <td>
+                <a class="warning" href="{{path('team_erp_customer_edit', {'id' : customer.id })}}">
+                    <i class="fa fa-pencil-square-o"></i>
+                </a> | 
+                <a class="danger" href="{{path('team_erp_customer_delete', {'id' : customer.id })}}">
+                    <i class="fa fa-trash-o"></i> 
+                </a>
+            </td>
                     <td>{% if customer.company.companyname != 'No Company' %}{{customer.company.companyname}}{% endif %}</td>
             <td>{{customer.customername}}</td>
             <td class="hidden-md hidden-sm hidden-xs">{{customer.address}}</td>

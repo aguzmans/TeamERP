@@ -16,9 +16,36 @@ class CategoryController extends Controller
         //data handler helper service
         $object = $this->get('data_handler_class');
         $statusMessage = $object->persisObject($request, $category, $form);
-        // Render templete.
+        //find table content (All Categories)
+        $result = $object->findAll('TeamERPBaseBundle:Category');
+        // Render templete.        
         return $this->render('TeamERPStoresBundle:Category:new_category.html.twig'
                 , array('form' => $form->createView(), 
-                    'status' => $statusMessage));
-    }   
+                    'status' => $statusMessage, 'result' => $result, 'action' => 'New'));
+    }
+    public function editAction(Request $request, $id){
+        $statusMessage = "";
+        //data handler helper service
+        $object = $this->get('data_handler_class');
+        //find object to edit
+        $category = $object->find('TeamERPBaseBundle:Category',$id);
+        // Form category service
+        $form = $this->createForm('category', $category);
+        //update category
+        $statusMessage = $object->updateObject($request,$form);
+        //Render template
+        return $this->render('TeamERPStoresBundle:Category:new_category.html.twig', 
+                array('form' => $form->createView(),  
+                    'status' => $statusMessage, 'action' => 'Edit'));        
+    }
+    public function removeAction($id){
+        $statusMessage = "";
+        //data handler helper service
+        $object = $this->get('data_handler_class');
+        //find object to edit
+        $category = $object->find('TeamERPBaseBundle:Category',$id);
+        $statusMessage = $object->removeAction($category);
+        return $this->render('TeamERPStoresBundle:Category:remove_category.html.twig', 
+                array('status' => $statusMessage));
+    }
 }

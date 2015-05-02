@@ -37,4 +37,12 @@ team_erp_stores_issue_order:
     defaults: { _controller: TeamERPStoresBundle:Issue:new }    
 team_erp_stores_list_issue:
     pattern:  /list/issue
-    defaults: { _controller: TeamERPStoresBundle:Issue:list }     
+    defaults: { _controller: TeamERPStoresBundle:Issue:list }
+#Edit category
+team_erp_stores_edit_category:
+    pattern: /edit/category/{id}
+    defaults: { _controller: TeamERPStoresBundle:Category:edit }
+#Delete category
+team_erp_stores_remove_category:
+    pattern: /remove/category/{id}
+    defaults: { _controller: TeamERPStoresBundle:Category:remove }

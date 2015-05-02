@@ -30,12 +30,12 @@ class Product
     private $description;
 
     /**
-     * @ORM\ManyToOne(targetEntity="TeamERP\BaseBundle\Entity\Category", inversedBy="product")
+     * @ORM\ManyToOne(targetEntity="TeamERP\BaseBundle\Entity\Category", inversedBy="product", cascade={"persist"})
      * @ORM\JoinColumn(name="category_id", referencedColumnName="id")
      */
     private $category;
     /**
-     * @ORM\ManyToOne(targetEntity="TeamERP\BaseBundle\Entity\MeasureUnit", inversedBy="product")
+     * @ORM\ManyToOne(targetEntity="TeamERP\BaseBundle\Entity\MeasureUnit", inversedBy="product", cascade={"persist"})
      */
     private $measureUnit;
     /**
@@ -73,7 +73,7 @@ class Product
     /**
      * Get id
      *
-     * @return integer 
+     * @return integer
      */
     public function getId()
     {
@@ -84,6 +84,7 @@ class Product
      * Set code
      *
      * @param string $code
+     *
      * @return Product
      */
     public function setCode($code)
@@ -96,169 +97,11 @@ class Product
     /**
      * Get code
      *
-     * @return string 
+     * @return string
      */
     public function getCode()
     {
         return $this->code;
-    }
-
-    /**
-     * Set description
-     *
-     * @param string $description
-     * @return Product
-     */
-    public function setDescription($description)
-    {
-        $this->description = $description;
-
-        return $this;
-    }
-
-    /**
-     * Get description
-     *
-     * @return string 
-     */
-    public function getDescription()
-    {
-        return $this->description;
-    }
-
-    /**
-     * Set date_received
-     *
-     * @param \DateTime $dateReceived
-     * @return Product
-     */
-    public function setDateReceived($dateReceived)
-    {
-        $this->date_received = $dateReceived;
-
-        return $this;
-    }
-
-    /**
-     * Get date_received
-     *
-     * @return \DateTime 
-     */
-    public function getDateReceived()
-    {
-        return $this->date_received;
-    }
-
-    /**
-     * Add pproductActivity
-     *
-     * @param \TeamERP\StoresBundle\Entity\ProductActivity $pproductActivity
-     * @return Product
-     */
-    public function addPproductActivity(\TeamERP\StoresBundle\Entity\ProductActivity $pproductActivity)
-    {
-        $this->pproductActivity[] = $pproductActivity;
-
-        return $this;
-    }
-
-    /**
-     * Remove pproductActivity
-     *
-     * @param \TeamERP\StoresBundle\Entity\ProductActivity $pproductActivity
-     */
-    public function removePproductActivity(\TeamERP\StoresBundle\Entity\ProductActivity $pproductActivity)
-    {
-        $this->pproductActivity->removeElement($pproductActivity);
-    }
-
-    /**
-     * Get pproductActivity
-     *
-     * @return \Doctrine\Common\Collections\Collection 
-     */
-    public function getPproductActivity()
-    {
-        return $this->pproductActivity;
-    }
-
-    /**
-     * Set category
-     *
-     * @param \TeamERP\StoresBundle\Entity\Category $category
-     * @return Product
-     */
-    public function setCategory(\TeamERP\StoresBundle\Entity\Category $category = null)
-    {
-        $this->category = $category;
-
-        return $this;
-    }
-
-    /**
-     * Get category
-     *
-     * @return \TeamERP\StoresBundle\Entity\Category 
-     */
-    public function getCategory()
-    {
-        return $this->category;
-    }
-
-    /**
-     * Set job
-     *
-     * @param \TeamERP\StoresBundle\Entity\Job $job
-     * @return Product
-     */
-    public function setJob(\TeamERP\StoresBundle\Entity\AJob $ajob = null)
-    {
-        $this->ajob = $ajob;
-
-        return $this;
-    }
-
-    /**
-     * Get job
-     *
-     * @return \TeamERP\StoresBundle\Entity\Job 
-     */
-    public function getJob()
-    {
-        return $this->job;
-    }
-
-    /**
-     * Add mesureUnit
-     *
-     * @param \TeamERP\StoresBundle\Entity\MesureUnit $mesureUnit
-     * @return Product
-     */
-    public function addMesureUnit(\TeamERP\StoresBundle\Entity\MesureUnit $mesureUnit)
-    {
-        $this->mesureUnit[] = $mesureUnit;
-
-        return $this;
-    }
-
-    /**
-     * Remove mesureUnit
-     *
-     * @param \TeamERP\StoresBundle\Entity\MesureUnit $mesureUnit
-     */
-    public function removeMesureUnit(\TeamERP\StoresBundle\Entity\MesureUnit $mesureUnit)
-    {
-        $this->mesureUnit->removeElement($mesureUnit);
-    }
-
-    /**
-     * Get mesureUnit
-     *
-     * @return \Doctrine\Common\Collections\Collection 
-     */
-    public function getMesureUnit()
-    {
-        return $this->mesureUnit;
     }
 
     /**
@@ -286,13 +129,37 @@ class Product
     }
 
     /**
-     * Set cost
+     * Set description
      *
-     * @param \double $cost
+     * @param string $description
      *
      * @return Product
      */
-    public function setCost(\double $cost)
+    public function setDescription($description)
+    {
+        $this->description = $description;
+
+        return $this;
+    }
+
+    /**
+     * Get description
+     *
+     * @return string
+     */
+    public function getDescription()
+    {
+        return $this->description;
+    }
+
+    /**
+     * Set cost
+     *
+     * @param string $cost
+     *
+     * @return Product
+     */
+    public function setCost($cost)
     {
         $this->cost = $cost;
 
@@ -302,7 +169,7 @@ class Product
     /**
      * Get cost
      *
-     * @return \double
+     * @return string
      */
     public function getCost()
     {
@@ -312,11 +179,11 @@ class Product
     /**
      * Set qtyToPurchase
      *
-     * @param \double $qtyToPurchase
+     * @param string $qtyToPurchase
      *
      * @return Product
      */
-    public function setQtyToPurchase(\double $qtyToPurchase)
+    public function setQtyToPurchase($qtyToPurchase)
     {
         $this->qtyToPurchase = $qtyToPurchase;
 
@@ -326,7 +193,7 @@ class Product
     /**
      * Get qtyToPurchase
      *
-     * @return \double
+     * @return string
      */
     public function getQtyToPurchase()
     {
@@ -336,11 +203,11 @@ class Product
     /**
      * Set reorderPoint
      *
-     * @param \double $reorderPoint
+     * @param string $reorderPoint
      *
      * @return Product
      */
-    public function setReorderPoint(\double $reorderPoint)
+    public function setReorderPoint($reorderPoint)
     {
         $this->reorderPoint = $reorderPoint;
 
@@ -350,7 +217,7 @@ class Product
     /**
      * Get reorderPoint
      *
-     * @return \double
+     * @return string
      */
     public function getReorderPoint()
     {
@@ -360,11 +227,11 @@ class Product
     /**
      * Set qtyOnSalesOrder
      *
-     * @param \double $qtyOnSalesOrder
+     * @param string $qtyOnSalesOrder
      *
      * @return Product
      */
-    public function setQtyOnSalesOrder(\double $qtyOnSalesOrder)
+    public function setQtyOnSalesOrder($qtyOnSalesOrder)
     {
         $this->qtyOnSalesOrder = $qtyOnSalesOrder;
 
@@ -374,7 +241,7 @@ class Product
     /**
      * Get qtyOnSalesOrder
      *
-     * @return \double
+     * @return string
      */
     public function getQtyOnSalesOrder()
     {
@@ -382,36 +249,84 @@ class Product
     }
 
     /**
-     * Add stockMove
+     * Set category
      *
-     * @param \TeamERP\BaseBundle\Entity\stockMove $stockMove
+     * @param \TeamERP\BaseBundle\Entity\Category $category
      *
      * @return Product
      */
-    public function addStockMove(\TeamERP\BaseBundle\Entity\stockMove $stockMove)
+    public function setCategory(\TeamERP\BaseBundle\Entity\Category $category = null)
     {
-        $this->StockMove[] = $stockMove;
+        $this->category = $category;
 
         return $this;
     }
 
     /**
-     * Remove stockMove
+     * Get category
      *
-     * @param \TeamERP\BaseBundle\Entity\stockMove $stockMove
+     * @return \TeamERP\BaseBundle\Entity\Category
      */
-    public function removeStockMove(\TeamERP\BaseBundle\Entity\stockMove $stockMove)
+    public function getCategory()
     {
-        $this->StockMove->removeElement($stockMove);
+        return $this->category;
     }
 
     /**
-     * Get stockMove
+     * Set measureUnit
+     *
+     * @param \TeamERP\BaseBundle\Entity\MeasureUnit $measureUnit
+     *
+     * @return Product
+     */
+    public function setMeasureUnit(\TeamERP\BaseBundle\Entity\MeasureUnit $measureUnit = null)
+    {
+        $this->measureUnit = $measureUnit;
+
+        return $this;
+    }
+
+    /**
+     * Get measureUnit
+     *
+     * @return \TeamERP\BaseBundle\Entity\MeasureUnit
+     */
+    public function getMeasureUnit()
+    {
+        return $this->measureUnit;
+    }
+
+    /**
+     * Add productStockMove
+     *
+     * @param \TeamERP\BaseBundle\Entity\ProductStockMove $productStockMove
+     *
+     * @return Product
+     */
+    public function addProductStockMove(\TeamERP\BaseBundle\Entity\ProductStockMove $productStockMove)
+    {
+        $this->ProductStockMove[] = $productStockMove;
+
+        return $this;
+    }
+
+    /**
+     * Remove productStockMove
+     *
+     * @param \TeamERP\BaseBundle\Entity\ProductStockMove $productStockMove
+     */
+    public function removeProductStockMove(\TeamERP\BaseBundle\Entity\ProductStockMove $productStockMove)
+    {
+        $this->ProductStockMove->removeElement($productStockMove);
+    }
+
+    /**
+     * Get productStockMove
      *
      * @return \Doctrine\Common\Collections\Collection
      */
-    public function getStockMove()
+    public function getProductStockMove()
     {
-        return $this->StockMove;
+        return $this->ProductStockMove;
     }
 }

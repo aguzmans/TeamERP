@@ -1,12 +1,9 @@
 parameters:
-#    team_erp_transport.example.class: TeamERP\TransportBundle\Example
+#    team_erp_transport.example.class: TeamERP\TransportBundle\ExampleD:\Web\team\src\TeamERP\TransportBundle\Resources\config\services.yml
 
 services:
     #category form
-    teamerp_stores.form.type.category:
-        class: TeamERP\StoresBundle\Form\Type\CategoryType
-        tags:
-            - { name: form.type, alias: category }
+
 
  
 

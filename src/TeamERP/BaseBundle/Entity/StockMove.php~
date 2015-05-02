@@ -14,7 +14,7 @@ class StockMove
      */
     private $id;
     /**
-     * @ORM\ManyToMany(targetEntity="TeamERP\BaseBundle\Entity\Product", mappedBy="job")
+     * @ORM\OneToMany(targetEntity="TeamERP\BaseBundle\Entity\ProductStockMove", mappedBy="stockmove")
      */
     private $product;
     /**
@@ -48,94 +48,5 @@ class StockMove
     public function __construct()
     {
         $this->product = new \Doctrine\Common\Collections\ArrayCollection();
-    }
-
-    /**
-     * Get id
-     *
-     * @return integer 
-     */
-    public function getId()
-    {
-        return $this->id;
-    }
-
-    /**
-     * Set number
-     *
-     * @param string $number
-     * @return Job
-     */
-    public function setNumber($number)
-    {
-        $this->number = $number;
-
-        return $this;
-    }
-
-    /**
-     * Get number
-     *
-     * @return string 
-     */
-    public function getNumber()
-    {
-        return $this->number;
-    }
-
-    /**
-     * Set creation_date
-     *
-     * @param \DateTime $creationDate
-     * @return Job
-     */
-    public function setCreationDate($creationDate)
-    {
-        $this->creation_date = $creationDate;
-
-        return $this;
-    }
-
-    /**
-     * Get creation_date
-     *
-     * @return \DateTime 
-     */
-    public function getCreationDate()
-    {
-        return $this->creation_date;
-    }
-
-    /**
-     * Add product
-     *
-     * @param \TeamERP\StoresBundle\Entity\Product $product
-     * @return Job
-     */
-    public function addProduct(\TeamERP\StoresBundle\Entity\Product $product)
-    {
-        $this->product[] = $product;
-
-        return $this;
-    }
-
-    /**
-     * Remove product
-     *
-     * @param \TeamERP\StoresBundle\Entity\Product $product
-     */
-    public function removeProduct(\TeamERP\StoresBundle\Entity\Product $product)
-    {
-        $this->product->removeElement($product);
-    }
-
-    /**
-     * Get product
-     *
-     * @return \Doctrine\Common\Collections\Collection 
-     */
-    public function getProduct()
-    {
-        return $this->product;
     }
 }

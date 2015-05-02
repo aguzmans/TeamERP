@@ -49,94 +49,14 @@ class StockMove
     {
         $this->product = new \Doctrine\Common\Collections\ArrayCollection();
     }
-
     /**
      * Get id
      *
-     * @return integer 
+     * @return integer
      */
     public function getId()
     {
         return $this->id;
-    }
-
-    /**
-     * Set number
-     *
-     * @param string $number
-     * @return Job
-     */
-    public function setNumber($number)
-    {
-        $this->number = $number;
-
-        return $this;
-    }
-
-    /**
-     * Get number
-     *
-     * @return string 
-     */
-    public function getNumber()
-    {
-        return $this->number;
-    }
-
-    /**
-     * Set creation_date
-     *
-     * @param \DateTime $creationDate
-     * @return Job
-     */
-    public function setCreationDate($creationDate)
-    {
-        $this->creation_date = $creationDate;
-
-        return $this;
-    }
-
-    /**
-     * Get creation_date
-     *
-     * @return \DateTime 
-     */
-    public function getCreationDate()
-    {
-        return $this->creation_date;
-    }
-
-    /**
-     * Add product
-     *
-     * @param \TeamERP\StoresBundle\Entity\Product $product
-     * @return Job
-     */
-    public function addProduct(\TeamERP\StoresBundle\Entity\Product $product)
-    {
-        $this->product[] = $product;
-
-        return $this;
-    }
-
-    /**
-     * Remove product
-     *
-     * @param \TeamERP\StoresBundle\Entity\Product $product
-     */
-    public function removeProduct(\TeamERP\StoresBundle\Entity\Product $product)
-    {
-        $this->product->removeElement($product);
-    }
-
-    /**
-     * Get product
-     *
-     * @return \Doctrine\Common\Collections\Collection 
-     */
-    public function getProduct()
-    {
-        return $this->product;
     }
 
     /**
@@ -233,6 +153,64 @@ class StockMove
     public function getDate()
     {
         return $this->date;
+    }
+
+    /**
+     * Set creationDate
+     *
+     * @param \DateTime $creationDate
+     *
+     * @return StockMove
+     */
+    public function setCreationDate($creationDate)
+    {
+        $this->creation_date = $creationDate;
+
+        return $this;
+    }
+
+    /**
+     * Get creationDate
+     *
+     * @return \DateTime
+     */
+    public function getCreationDate()
+    {
+        return $this->creation_date;
+    }
+
+    /**
+     * Add product
+     *
+     * @param \TeamERP\BaseBundle\Entity\ProductStockMove $product
+     *
+     * @return StockMove
+     */
+    public function addProduct(\TeamERP\BaseBundle\Entity\ProductStockMove $product)
+    {
+        $this->product[] = $product;
+
+        return $this;
+    }
+
+    /**
+     * Remove product
+     *
+     * @param \TeamERP\BaseBundle\Entity\ProductStockMove $product
+     */
+    public function removeProduct(\TeamERP\BaseBundle\Entity\ProductStockMove $product)
+    {
+        $this->product->removeElement($product);
+    }
+
+    /**
+     * Get product
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getProduct()
+    {
+        return $this->product;
     }
 
     /**

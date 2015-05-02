@@ -17,3 +17,14 @@ services:
         scope: request 
         tags:
             - { name: knp_menu.menu, alias: side_left_stores }
+            
+    teamerp.controller.category_new:
+        class: TeamERP\StoresBundle\Controller\CategoryController
+        arguments: [@request=]
+        tags:
+            - { name: controller.category, alias: new_category }
+    
+    teamerp_stores.form.type.category:
+        class: TeamERP\StoresBundle\Form\Type\CategoryType
+        tags:
+            - { name: form.type, alias: category }            

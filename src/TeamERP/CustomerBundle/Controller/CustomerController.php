@@ -44,10 +44,6 @@ class CustomerController extends Controller {
             //get the customer information from the form
             $customerInfo = $request->request->get('customer');
             $customerInfo = $customerInfo['customer_info'];
-            //$type = $customerInfo['typeContact'];
-            //var_dump($type);
-            
-            //Query DB
             $result = $this->getDoctrine()->getManager()
                     ->getRepository('TeamERPCustomerBundle:Customer')
                     ->searchCustomer($customerInfo);
