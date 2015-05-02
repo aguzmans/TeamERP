@@ -1,7 +1,6 @@
 <?php
 namespace TeamERP\BaseBundle\Entity;
 use Doctrine\ORM\Mapping AS ORM;
-
 /**
  * @ORM\Entity
  */
@@ -13,31 +12,18 @@ class Product
      * @ORM\GeneratedValue(strategy="AUTO")
      */
     private $id;
-
-    /**
-     * @ORM\Column(type="string", length=50, nullable=true)
-     */
-    private $code;
-
     /**
      * @ORM\Column(type="string", length=250, nullable=true)
      */
     private $name;
-    
+    /**
+     * @ORM\Column(type="string", length=50, nullable=true)
+     */
+    private $code;    
     /**
      * @ORM\Column(type="string", length=250, nullable=true)
      */
     private $description;
-
-    /**
-     * @ORM\ManyToOne(targetEntity="TeamERP\BaseBundle\Entity\Category", inversedBy="product", cascade={"persist"})
-     * @ORM\JoinColumn(name="category_id", referencedColumnName="id")
-     */
-    private $category;
-    /**
-     * @ORM\ManyToOne(targetEntity="TeamERP\BaseBundle\Entity\MeasureUnit", inversedBy="product", cascade={"persist"})
-     */
-    private $measureUnit;
     /**
      * @ORM\Column(type="decimal", nullable=true)
      */
@@ -55,21 +41,27 @@ class Product
      */
     private $qtyOnSalesOrder;
     /**
+     * @ORM\ManyToOne(targetEntity="TeamERP\BaseBundle\Entity\Category", inversedBy="product", cascade={"persist"})
+     * @ORM\JoinColumn(name="category_id", referencedColumnName="id")
+     */
+    private $category;
+    /**
+     * @ORM\ManyToOne(targetEntity="TeamERP\BaseBundle\Entity\MeasureUnit", inversedBy="product", cascade={"persist"})
+     */
+    private $measureUnit;
+    /**
      * @ORM\OneToMany(targetEntity="TeamERP\BaseBundle\Entity\ProductStockMove", mappedBy="product")
      */
     private $ProductStockMove;
-    
     /**
      * Constructor
      */
-    
     public function __construct()
     {
 //        $this->pproductActivity = new \Doctrine\Common\Collections\ArrayCollection();
         $this->mesureUnit = new \Doctrine\Common\Collections\ArrayCollection();
         $this->ProductStockMove = new \Doctrine\Common\Collections\ArrayCollection();
     }
-
     /**
      * Get id
      *

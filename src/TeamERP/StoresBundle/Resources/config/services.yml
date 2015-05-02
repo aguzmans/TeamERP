@@ -28,3 +28,7 @@ services:
         class: TeamERP\StoresBundle\Form\Type\CategoryType
         tags:
             - { name: form.type, alias: category }            
+    teamerp_stores.form.type.product:
+        class: TeamERP\StoresBundle\Form\Type\ProductType
+        tags:
+            - { name: form.type, alias: product }            

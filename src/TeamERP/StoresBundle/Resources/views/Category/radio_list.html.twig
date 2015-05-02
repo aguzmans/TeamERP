@@ -1,33 +1,5 @@
 <div class="form-group">
-<table class="table table-striped">
-    <thead>
-        <tr>
-            <th>Select a Category</th>
-            <th>Description</th>
-            <th>Select a Category</th>
-            <th>Description</th>
-            <th>Select a Category</th>
-            <th>Description</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td><input type="radio" name="categories-group" value=""/> Cables</td>
-            <td>All cables</td>
-            <td><input type="radio" name="categories-group" value=""/> Doors</td>
-            <td>All doors</td>
-            <td><input type="radio" name="categories-group" value=""/> Screws</td>
-            <td>Test screws</td>
-        </tr>
-        <tr>
-            <td><input type="radio" name="categories-group" value=""/> Paint</td>
-            <td>Painst Description</td>
-            <td><input type="radio" name="categories-group" value=""/> Steel</td>
-            <td>Description</td>
-            <td><input type="radio" name="categories-group" value=""/> Toilets</td>
-            <td>Toilets description</td>
-        </tr>
-    </tbody>
-</table>
-{% include 'TeamERPStoresBundle:Category:category_form.html.twig' %}
+        {% for key,category in categories %}
+            <input type="radio" name="categories-group" value="{{category.id}}" class="form-inline"/> {{category.name}} {{category.description}}
+        {% endfor %}
 </div>

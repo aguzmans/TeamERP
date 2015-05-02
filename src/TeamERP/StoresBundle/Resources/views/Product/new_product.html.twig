@@ -2,10 +2,11 @@
 {% block content %}
     <div class="form-header"><h1>New product</h1></div>     
     <div class="form">
-        <form class="form-horizontal">
+        {{ form_start(form, {'attr': {'class': 'form-horizontal'}}) }}
+        {{ form_errors(form) }}
             {% include 'TeamERPStoresBundle:Product:product_form.html.twig' %}
             {% include 'TeamERPStoresBundle::action_save_controls.html.twig' %}
-        </form>
+        {{ form_end(form) }}
     </div>
 {% endblock %}
 {% block javascripts %}

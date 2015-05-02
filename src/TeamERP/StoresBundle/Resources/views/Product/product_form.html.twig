@@ -1,19 +1,25 @@
 <div class="form-group">
-    <label class="col-sm-2 control-label">Product name</label>
+    {{ form_label(form.name, null, {'label_attr': {'class': 'col-sm-2 control-label'}}) }}
     <div class="col-sm-10">
-        <input type="text" class="form-control" placeholder="e.g. PVC Pipe 3 cm "/>
+        {{ form_widget(form.name, {'attr': {'class': 'form-control', 'placeholder' : 'e.g. PVC Pipe 3 cm'}}) }}
     </div>
 </div>
 <div class="form-group">
-    <label class="col-sm-2 control-label">Description</label>
+    {{ form_label(form.code, null, {'label_attr': {'class': 'col-sm-2 control-label'}}) }}
     <div class="col-sm-10">
-        <input type="text" class="form-control" placeholder="Long description"/>
+        {{ form_widget(form.code, {'attr': {'class': 'form-control', 'placeholder' : 'Code for this category'}}) }}
     </div>
 </div>
 <div class="form-group">
-    <label class="col-sm-2 control-label">Code</label>
+    {{ form_label(form.description, null, {'label_attr': {'class': 'col-sm-2 control-label'}}) }}
     <div class="col-sm-10">
-        <input type="text" class="form-control" placeholder="Code for this category"/>
+        {{ form_widget(form.description, {'attr': {'class': 'form-control', 'placeholder' : 'Long description'}}) }}
+    </div>
+</div>
+<div class="form-group">
+    {{ form_label(form.cost, null, {'label_attr': {'class': 'col-sm-2 control-label'}}) }}
+    <div class="form-inline">
+        {{ form_widget(form.cost, {'attr': {'class': 'form-control', 'placeholder' : 'product cost per unit'}}) }}
     </div>
 </div>
 <div class="form-group">
@@ -33,6 +39,29 @@
 </div>
 <div class="form-group" id="category-list">
     {% include 'TeamERPStoresBundle:Category:radio_list.html.twig' %}
+    <div class="border-line-black">
+        <div class="form-group category-h3-title">
+            <h3 class=""> New {{ form_label(form.category, null) }}</h3>
+        </div>
+        <div class="form-group">
+            {{ form_label(form.category.name, null, {'label_attr': {'class': 'col-sm-2 control-label'}}) }}
+            <div class="col-sm-9">
+                {{ form_widget(form.category.name, {'attr': {'class': 'form-control', 'placeholder' : 'Category name'}}) }}
+            </div>
+        </div>
+        <div class="form-group">
+            {{ form_label(form.category.code, null, {'label_attr': {'class': 'col-sm-2 control-label'}}) }}
+            <div class="col-sm-9">
+                {{ form_widget(form.category.code, {'attr': {'class': 'form-control', 'placeholder' : 'Category code'}}) }}
+            </div>
+        </div>
+        <div class="form-group">
+            {{ form_label(form.category.description, null, {'label_attr': {'class': 'col-sm-2 control-label'}}) }}
+            <div class="col-sm-9">
+                {{ form_widget(form.category.description, {'attr': {'class': 'form-control', 'placeholder' : 'Long description'}}) }}
+            </div>
+        </div>
+    </div>    
 </div>
 <div class="form-group">
     <label class="col-sm-2 control-label">Measure Unit</label>
@@ -51,16 +80,22 @@
 </div>
 <div id="measureUnitForm">
     {% include 'TeamERPStoresBundle:Configuration:measure_unit_form.html.twig' %}
-</div>
+</div>    
 <div class="form-group">
-    <label class="col-sm-2 control-label">Reorder point</label>
+    {{ form_label(form.qtyToPurchase, null, {'label_attr': {'class': 'col-sm-2 control-label'}}) }}
     <div class="col-sm-10">
-        <input type="text" class="form-control" placeholder="Munimun amount"/>
+        {{ form_widget(form.qtyToPurchase, {'attr': {'class': 'form-control', 'placeholder' : 'Quantity to Purchase'}}) }}
     </div>
 </div>
 <div class="form-group">
-    <label class="col-sm-2 control-label">Preferred supplier</label>
+    {{ form_label(form.reorderPoint, null, {'label_attr': {'class': 'col-sm-2 control-label'}}) }}
     <div class="col-sm-10">
-        <input type="text" class="form-control" placeholder="Information about the suppliers"/>
+        {{ form_widget(form.reorderPoint, {'attr': {'class': 'form-control', 'placeholder' : 'Information about the suppliers'}}) }}
     </div>
 </div>
+<div class="form-group">
+    {{ form_label(form.qtyOnSalesOrder, null, {'label_attr': {'class': 'col-sm-2 control-label'}}) }}
+    <div class="col-sm-10">
+        {{ form_widget(form.qtyOnSalesOrder, {'attr': {'class': 'form-control', 'placeholder' : 'Quantity on sales order'}}) }}
+    </div>
+</div>    
