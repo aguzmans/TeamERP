@@ -1,15 +1,5 @@
 parameters:
-#    team_erp_customer.example.class: TeamERP\CustomerBundle\Example
-
-# services:
-#    team_erp_customer.example:
-#        class: %team_erp_customer.example.class%
-#        arguments: [@service_id, "plain_value", %parameter%]
-services:
-#    teamerp_customer.entity.customer:
-#        class: TeamERP\CustomerBundle\Entity\Customer
-#        tags:
-#            - { name: customer.entity, alias: customer }    
+services:    
     teamerp_customer.form.type.customer:
         class: TeamERP\CustomerBundle\Form\Type\CustomerType
         tags:

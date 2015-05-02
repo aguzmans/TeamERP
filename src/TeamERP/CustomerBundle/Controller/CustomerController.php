@@ -20,13 +20,8 @@ class CustomerController extends Controller {
         //create form using the service called customer
         $form = $this->createForm('customer', $customer);
         /* Persis Customer */
-//        var_dump($customer);
-//        die;
-//        //persist customer and company
-//        if ($customer->getCompany() == ''){
-//            $customer->setCompany() = 'No Company';
-//        }
-        $statusMessage = $this->persisCustomerAndCompany($request, $customer, $form);
+        $object = $this->get('data_handler_class');
+        $statusMessage = $object->persisObject($request, $customer, $form);
         /* Send infor to the client */
         return $this->render('TeamERPCustomerBundle:Customer:new.html.twig', 
                 array('form' => $form->createView(), 
@@ -110,7 +105,6 @@ class CustomerController extends Controller {
      * List JSON: This method creates the list of all companies 
      * in the DB and returns it in a json array
      */
-
     private function createJSONListOfCompanies() {
         /* Create the autocomplete list */
         $ListOfCompanies = $this->getDoctrine()
@@ -127,27 +121,4 @@ class CustomerController extends Controller {
         }
         return $data;
     }
-
-    /*
-     * Persist Customer function
-     */
-
-    private function persisCustomerAndCompany(Request $request, Customer $customer, $form) {
-        $form->handleRequest($request);
-        $statusMessage = "";
-        //if ($form->isValid())            echo 'Is Valid';
-        
-        if ($form->isValid() && $request->getMethod() == 'POST') {
-            try {
-                $em = $this->getDoctrine()->getManager();
-                $em->persist($customer);
-                $em->flush();
-                $statusMessage = "Saved";
-            } catch (Exception $exc) {
-                $statusMessage = $exc->getTraceAsString();
-            }
-        }
-        return $statusMessage;
-    }
-
 }

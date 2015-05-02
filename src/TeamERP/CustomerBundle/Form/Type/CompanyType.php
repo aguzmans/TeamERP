@@ -18,20 +18,6 @@ class CompanyType  extends AbstractType
                     'class' => 'TeamERPCustomerBundle:Company',
                     'property' => 'company_name',
                 ));
-//                ->add('company_name', 'genemu_jqueryautocomplete_text', array(
-//                    'route_name' => 'team_erp_customer_ajax_list_company'
-//                ))        
-//                ->add('company_name', 'genemu_jqueryautocomplete_text', 
-//                array( 'required' => false,
-//                    'suggestions' => array(
-//                    'Ozil',
-//                    'Van Persie',
-//                    'Ozz',
-//                    'Ozasuna'
-//                    ),
-//        ));
-//        $builder->add("company_name", "text", 
-//                array('label'=>'Company Name'));
     }
     public function setDefaultOptions(\Symfony\Component\OptionsResolver\OptionsResolverInterface $resolver) {
         //parent::setDefaultOptions($resolver);

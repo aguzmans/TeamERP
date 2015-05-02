@@ -20,3 +20,7 @@ services:
         arguments: [@templating, @kernel]
         tags:
             - { name: kernel.event_listener, event: kernel.exception, method: onKernelException, alias: exception_listener }            
+    # Class to handle data manipulation e.g. persistence.        
+    data_handler_class:
+        class:        TeamERP\BaseBundle\Model\Lib\DataHandler
+        arguments:    ["@doctrine.orm.entity_manager"]
