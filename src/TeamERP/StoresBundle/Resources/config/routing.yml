@@ -46,3 +46,11 @@ team_erp_stores_edit_category:
 team_erp_stores_remove_category:
     pattern: /remove/category/{id}
     defaults: { _controller: TeamERPStoresBundle:Category:remove }
+#Edit measure unit
+team_erp_stores_edit_measure_unit:
+    pattern: /edit/measure_unit/{id}
+    defaults: { _controller: TeamERPStoresBundle:Configuration:edit }
+#Delete measure unit
+team_erp_stores_remove_measure_unit:
+    pattern: /remove/measure_unit/{id}
+    defaults: { _controller: TeamERPStoresBundle:Configuration:remove }

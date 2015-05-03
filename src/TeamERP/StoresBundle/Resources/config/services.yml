@@ -32,3 +32,7 @@ services:
         class: TeamERP\StoresBundle\Form\Type\ProductType
         tags:
             - { name: form.type, alias: product }            
+    teamerp_stores.form.type.measureunit:
+        class: TeamERP\StoresBundle\Form\Type\MeasureUnitType
+        tags:
+            - { name: form.type, alias: measure_unit }            

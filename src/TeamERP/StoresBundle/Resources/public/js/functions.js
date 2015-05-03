@@ -29,17 +29,12 @@ $(function(){
     $("#del-product-row").click(function(){
         destryTableRow(document.getElementById("row-number").value);
     });
-    // New Measure Unit show Hide.
+    // New Measure Unit show Hide on the product form.
     $("#measureUnitForm").hide();
+    $("#show-measure").click(function(){
+        $("#measureUnitForm").show();
+    });
 });
-// New Mesure Unit select New Unit On Change.
-function change(selThis) {
-    if(selThis.options[selThis.selectedIndex].value === "-1"){
-        $('#measureUnitForm').show();
-    } else {
-        $('#measureUnitForm').hide();
-    }
-}
 
 function clickDelete(selThis){
     confirm("Are you sure you want to delete XXXX ");
