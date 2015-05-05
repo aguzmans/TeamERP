@@ -1,5 +1,5 @@
 <div class="form-group">
         {% for key,category in categories %}
-            <input type="radio" name="categories-group" id="categories-group{{category.id}}" value="{{category.id}}" class="form-inline" onclick="changeRadio('categories-group{{category.id}}')"/> {{category.name}} {{category.description}}
+            <input type="radio" name="categories-group" id="categories-group{{category.id}}" value="{{category.id}}" class="form-inline" onclick="changeRadio('categories-group{{category.id}}')"/> {{category.name}} {{category.description}} |
         {% endfor %}
 </div>

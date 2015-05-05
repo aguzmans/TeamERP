@@ -4,6 +4,7 @@ namespace TeamERP\StoresBundle\Form\Type;
 
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
+// To be able to call the function finishView that modifies the measure unit drop down list.
 use Symfony\Component\Form\FormView; 
 use Symfony\Component\Form\FormInterface;
 use Symfony\Component\Form\Extension\Core\View\ChoiceView;
@@ -42,6 +43,7 @@ class ProductType  extends AbstractType
     {
         return 'product';
     }
+    //this is to modify the Measure unit drop down list
     public function finishView(FormView $view, FormInterface $form, array $options)
     {
         $new_choice = new ChoiceView(array(), 'add', 'add new'); // <- new option

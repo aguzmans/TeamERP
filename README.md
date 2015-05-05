@@ -1,10 +1,17 @@
 Team Enterprise Resource Management (TeamERP) 
 ========================
+NOTICE: his was an attempt to document the app installation from long ago, the truth is that working with the code I have not had time to maintain it. 
+I am looking for people who want to contribute to something that could be good at some point to help. 
+If you want to contribute some how please start by downloading the code or you can also contact me via this link: http://www.abelworld.com/contact-me/
+There is plenty to be done :) so you are welcome.
+
 Demo of what is currently being developed: http://erp.abelworld.com
 user: abel
 pass: abel
+
 Welcome to the TeamERP - the aim of this project is to create a fully-functional Symfony2
-application for Enterprise management. For now I have done only the customer care bundle,
+application for Enterprise management. For now I have worked on the customer care bundle, stores, security, and transport. 
+That does not mean that any of them is close to completion or close to realease mode. 
 but very soon I'll continue adding more and more functionality and other modules.
 
 This document contains information on how to download, install, and start
